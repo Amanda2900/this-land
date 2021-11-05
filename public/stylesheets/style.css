@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(115, 238, 187);
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -41,4 +41,15 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  margin-top: 100px;
+}
+
+p {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 50px;
+}
+
+.dino {
+  font-size: 4rem;
 }

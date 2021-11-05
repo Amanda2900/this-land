@@ -2,15 +2,9 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %> avatar"
-      >
-    </div>
-  <% } %>
+  <h1>Welcome to This Land</h1>
+  <p>This is a fertile land and any creatures who live here will thrive. But first you need to make some! Use the creature creator to bring to life your dream prehistoric animals. Check out the creatures of other users and rate their ability to survive, thrive, and rule over all of This Land!</p>
+  <p class="dino">🦕</p>
 </main>
 
 <%- include('./partials/footer') %>
