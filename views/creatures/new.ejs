@@ -1,0 +1,99 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Build a Creature</h1>
+  <form action="/dinos" method="POST"></form>
+  <label for="name">Creature's name:
+    <input type="text" name="name" placeholder="Enter name here">
+  </label>
+  <label for="sciName">Creature's scientific name:
+    <input type="text" name="sciName" placeholder="Enter scientific name here">
+  </label>
+  <label for="animalClass">Creature's class?
+    <select name="animalClass">
+      <option selected value="Mammal">Mammal</option>
+      <option value="Reptile">Reptile</option>
+      <option value="Bird">Bird</option>
+      <option value="Insect">Insect</option>
+      <option value="Amphibian">Amphibian</option>
+    </select>
+  </label>
+  <label for="size">Creature's size?
+    <select name="size">
+      <option selected value="Extra Small">Extra Small</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="Extra Large">Extra Large</option>
+    </select>
+  </label>
+  <label for="habitat">Creature's habitat?
+    <select name="habitat">
+      <option selected value="Forest">Forest</option>
+      <option value="Ocean">Ocean</option>
+      <option value="Jungle">Jungle</option>
+      <option value="Grasslands">Grasslands</option>
+      <option value="Tundra">Tundra</option>
+    </select>
+  </label>
+  <label for="food">Creature's type?
+    <select name="food">
+      <option selected value="Omnivore">Omnivore</option>
+      <option value="Herbivore">Herbivore</option>
+      <option value="Carnivore">Carnivore</option>
+    </select>
+  </label>
+  <label for="defense">Creature's main defense?
+    <select name="defense">
+      <option selected value="Spikes">Spikes</option>
+      <option value="Claws">Claws</option>
+      <option value="Shell">Shell</option>
+      <option value="Poison">Poison</option>
+      <option value="Fangs">Fangs</option>
+      <option value="Horns">Horns</option>
+    </select>
+  </label>
+  <label for="walking">Creature's way of walking?
+    <select name="walking">
+      <option selected value="Biped">Biped</option>
+      <option value="Quadruped">Quadruped</option>
+      <option value="Hexaped">Hexaped</option>
+      <option value="Octoped">Octoped</option>
+      <option value="Myriapoda">Myriapoda</option>
+      <option value="Limbless">Limbless</option>
+    </select>
+  </label>
+  <label for="bodyCovering">Creature's body covering?
+    <select name="bodyCovering">
+      <option selected value="Feathers">Feathers</option>
+      <option value="Thick fur">Thick fur</option>
+      <option value="Thin hair">Thin hair</option>
+      <option value="Scales">Scales</option>
+      <option value="Mucous">Mucous</option>
+      <option value="Exoskeleton">Exoskeleton</option>
+    </select>
+  </label>
+  <label for="wings">
+    Does the Creature have wings?
+    <input type="checkbox" name="wings">
+  </label>
+  <label for="flight">
+    Can the Creature fly?
+    <input type="checkbox" name="flight">
+  </label>
+  <label for="element" hidden>What element does the Creature control?
+    <select name="element" hidden>
+      <option selected value="Ice">Ice</option>
+      <option value="Electricity">Electricity</option>
+      <option value="Fire">Fire</option>
+      <option value="Water">Water</option>
+      <option value="Earth">Earth</option>
+      <option value="Psychic">Psychic</option>
+    </select>
+  </label>
+  <button type="submit">Create Creature</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

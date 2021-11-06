@@ -53,3 +53,7 @@ p {
 .dino {
   font-size: 4rem;
 }
+
+nav > a {
+  margin: 10px; 
+}
