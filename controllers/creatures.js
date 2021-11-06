@@ -75,8 +75,26 @@ function update(req, res) {
         res.redirect(`/creatures/${creature._id}`)
       })
     } else {
-      throw new Error ('🚫 Not authorized 🚫')
+      throw new Error ('Not authorized')
     }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/creatures')
+  })
+}
+
+function deleteCreature(req, res) {
+  Creature.findById(req.params.id)
+  .then(creature => {
+    if (creature.owner.equals(req.user.profile._id)) {
+      creature.delete()
+      .then(() => {
+        res.redirect('/creatures')
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }   
   })
   .catch(err => {
     console.log(err)
@@ -90,6 +108,7 @@ export {
   create,
   show,
   edit,
-  update
+  update,
+  deleteCreature as delete
 
 }

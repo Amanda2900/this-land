@@ -13,6 +13,8 @@ router.post('/', isLoggedIn, creaturesCtrl.create)
 
 router.put('/:id', isLoggedIn, creaturesCtrl.update)
 
+router.delete('/:id', isLoggedIn, creaturesCtrl.delete)
+
 export {
   router
 }
