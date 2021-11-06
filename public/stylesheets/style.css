@@ -50,6 +50,10 @@ p {
   margin: 0 50px;
 }
 
+label {
+  display: block;
+}
+
 .dino {
   font-size: 4rem;
 }

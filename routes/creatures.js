@@ -5,10 +5,10 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', creaturesCtrl.index)
-router.get('/:id', creaturesCtrl.show)
-router.get('/new', creaturesCtrl.new)
+router.get('/new', isLoggedIn, creaturesCtrl.new)
+router.get('/:id', isLoggedIn, creaturesCtrl.show)
 
-router.post('/:id', creaturesCtrl.create)
+router.post('/', isLoggedIn, creaturesCtrl.create)
 
 export {
   router

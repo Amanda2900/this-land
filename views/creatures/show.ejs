@@ -4,15 +4,28 @@
 <main>
   <h1>Creature Info</h1>
   <section>
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departure Day/Time: </div>
-    <div><%= flight.departs %></div>
-    <div>Destinations:</div>
+    <div>Name: </div>
+    <div><%= creature.name %></div>
+    <div>Scientific Name: </div>
+    <div><%= creature.sciName %></div>
+    <div>Class: </div>
+    <div><%= creature.animalClass %></div>
+    <div>Size: </div>
+    <div><%= creature.size %></div>
+    <div>Habitat:</div>
+    <div><%= creature.habitat %></div>
+    <div>Type: </div>
+    <div><%= creature.food %></div>
+    <div>Main Defense: </div>
+    <div><%= creature.defense %></div>
+    <div>How it Walks: </div>
+    <div><%= creature.walking %></div>
+    <div>Body Covering: </div>
+    <div><%= creature.bodyCovering %></div>
+    <div><%= creature.wings ? 'This creature has wings' : 'This creature does not have wings' %></div>
+    <div><%= creature.flight ? 'This creature can fly' : 'This creature cannot fly' %></div>
+    <div hidden>Element: </div>
+    <div hidden><%= creature.element %></div>
     <ul>
 </main>
 
