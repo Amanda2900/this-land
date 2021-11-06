@@ -50,9 +50,46 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Creature.findById(req.params.id)
+  .then(creature => {
+    res.render('creatures/edit', {
+      creature,
+      title: `edit ${creature.name}`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/creatures')
+  })
+}
+
+function update(req, res) {
+  Creature.findById(req.params.id)
+  .then(creature => {
+    if (creature.owner.equals(req.user.profile._id)) {
+      req.body.wings = !!req.body.wings
+      req.body.flight = !!req.body.flight
+      creature.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/creatures/${creature._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/creatures')
+  })
+}
+
 export {
   index,
   newCreature as new,
   create,
-  show
+  show,
+  edit,
+  update
+
 }

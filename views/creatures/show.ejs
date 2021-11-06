@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Creature Info</h1>
+  <h1><%= creature.name %>'s Info</h1>
   <section>
     <div>Name: </div>
     <div><%= creature.name %></div>
@@ -27,6 +27,17 @@
     <div hidden>Element: </div>
     <div hidden><%= creature.element %></div>
     <ul>
+    <% if (creature.owner.equals(user?.profile._id)) { %>
+      <form action="/creatures/new" method="GET">
+        <button class="btn" type="submit">Give <%= creature.name %> a sibling</button>
+      </form>
+      <form action="/creatures/<%= creature._id %>/edit" method="GET">
+        <button class="btn" type="submit">Edit <%= creature.name %></button>
+      </form>
+      <form action="/creatures/<%= creature._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete <%= creature.name %></button>
+      </form>
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

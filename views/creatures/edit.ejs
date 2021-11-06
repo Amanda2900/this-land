@@ -3,15 +3,15 @@
 
 <main>
   <% if (user) { %> 
-    <h1>Build a Creature</h1>
-    <form action="/creatures" method="POST">
-      <label for="name">Creature's name:
-        <input type="text" name="name" placeholder="Enter name here" autocomplete="off">
+    <h1>Edit <%= creature.name %></h1>
+    <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
+      <label for="name"><%= creature.name %>'s name:
+        <input type="text" name="name" value="<%= creature.name %>" autocomplete="off">
       </label>
-      <label for="sciName">Creature's scientific name:
-        <input type="text" name="sciName" placeholder="Enter scientific name here" autocomplete="off">
+      <label for="sciName"><%= creature.name %>'s scientific name:
+        <input type="text" name="sciName" value="<%= creature.sciName %>" autocomplete="off">
       </label>
-      <label for="animalClass">Creature's class?
+      <label for="animalClass"><%= creature.name %>'s class?
         <select name="animalClass">
           <option selected value="Mammal">Mammal</option>
           <option value="Reptile">Reptile</option>
@@ -20,7 +20,7 @@
           <option value="Amphibian">Amphibian</option>
         </select>
       </label>
-      <label for="size">Creature's size?
+      <label for="size"><%= creature.name %>'s size?
         <select name="size">
           <option selected value="Extra Small">Extra Small</option>
           <option value="Small">Small</option>
@@ -29,7 +29,7 @@
           <option value="Extra Large">Extra Large</option>
         </select>
       </label>
-      <label for="habitat">Creature's habitat?
+      <label for="habitat"><%= creature.name %>'s habitat?
         <select name="habitat">
           <option selected value="Forest">Forest</option>
           <option value="Ocean">Ocean</option>
@@ -38,14 +38,14 @@
           <option value="Tundra">Tundra</option>
         </select>
       </label>
-      <label for="food">Creature's type?
+      <label for="food"><%= creature.name %>'s type?
         <select name="food">
           <option selected value="Omnivore">Omnivore</option>
           <option value="Herbivore">Herbivore</option>
           <option value="Carnivore">Carnivore</option>
         </select>
       </label>
-      <label for="defense">Creature's main defense?
+      <label for="defense"><%= creature.name %>'s main defense?
         <select name="defense">
           <option selected value="Spikes">Spikes</option>
           <option value="Claws">Claws</option>
@@ -55,7 +55,7 @@
           <option value="Horns">Horns</option>
         </select>
       </label>
-      <label for="walking">Creature's way of walking?
+      <label for="walking"><%= creature.name %>'s way of walking?
         <select name="walking">
           <option selected value="Biped">Biped</option>
           <option value="Quadruped">Quadruped</option>
@@ -65,7 +65,7 @@
           <option value="Limbless">Limbless</option>
         </select>
       </label>
-      <label for="bodyCovering">Creature's body covering?
+      <label for="bodyCovering"><%= creature.name %>'s body covering?
         <select name="bodyCovering">
           <option selected value="Feathers">Feathers</option>
           <option value="Thick fur">Thick fur</option>
@@ -76,24 +76,26 @@
         </select>
       </label>
       <label for="wings">
-        Does the Creature have wings?
-        <input type="checkbox" name="wings">
+        Does <%= creature.name %> have wings?
+        <input type="checkbox" name="wings" <%= creature.wings ? "checked" : "" %>>
       </label>
       <label for="flight">
-        Can the Creature fly?
-        <input type="checkbox" name="flight">
+        Can <%= creature.name %> fly?
+        <input type="checkbox" name="flight" <%= creature.flight ? "checked" : "" %> >
       </label>
-      <label for="element" hidden>What element does the Creature control?
-        <select name="element" hidden>
-          <option selected value="Ice">Ice</option>
-          <option value="Electricity">Electricity</option>
-          <option value="Fire">Fire</option>
-          <option value="Water">Water</option>
-          <option value="Earth">Earth</option>
-          <option value="Psychic">Psychic</option>
-        </select>
-      </label>
-      <button type="submit">Create Creature</button>
+      <% if (creature.dragon) { %> 
+        <label for="element">What element does <%= creature.name %> control?
+          <select name="element">
+            <option selected value="Ice">Ice</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Fire">Fire</option>
+            <option value="Water">Water</option>
+            <option value="Earth">Earth</option>
+            <option value="Psychic">Psychic</option>
+          </select>
+        </label>
+      <% } %> 
+      <button type="submit">Save Changes</button>
     </form>
   <% } %> 
 </main>
