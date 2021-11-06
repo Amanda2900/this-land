@@ -2,8 +2,16 @@ import { Creature } from '../models/creature.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 
 function index(req, res) {
-  res.render('creatures/index', {
-    title: "Creatures"
+  Creature.find({})
+  .then(creatures => {
+    res.render('creatures/index', {
+      creatures,
+			title: "Creatures"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/creatures')
   })
 }
 
