@@ -102,6 +102,21 @@ function deleteCreature(req, res) {
   })
 }
 
+function createComment(req, res) {
+  req.body.authorId = req.user.profile._id
+  req.body.author = req.user.profile.name
+  Creature.findById(req.params.id)
+  .then(creature => {
+    creature.comments.push(req.body)
+    creature.save()
+    res.redirect(`/creatures/${creature._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/creatures')
+    })
+}
+
 export {
   index,
   newCreature as new,
@@ -109,6 +124,7 @@ export {
   show,
   edit,
   update,
-  deleteCreature as delete
+  deleteCreature as delete,
+  createComment
 
 }

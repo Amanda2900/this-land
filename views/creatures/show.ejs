@@ -38,6 +38,39 @@
         <button class="btn" type="submit">Delete <%= creature.name %></button>
       </form>
     <% } %>
+  </section>
+  <section class="comments">
+    <h2>Comments</h2>
+    <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+      <div><%= user.profile.name %></div>
+      <label for="rating"><%= creature.name %>
+        <select name="rating">
+          <option selected value="is the king of the dinosaurs and rules This Land!">is the king of the dinosaurs and rules This Land!</option>
+          <option value="will live long and prosper.">will live long and prosper.</option>
+          <option value="is a great conversationalist, but weak DNA.">is a great conversationalist, but weak DNA.</option>
+          <option value="smells nice and looks tasty.">smells nice and looks tasty.</option>
+          <option value="will make it 10 feet and get stuck in a tar pit.">will make it 10 feet and get stuck in a tar pit.</option>
+        </select>
+      </label>
+      <label for="content">They
+        <select name="content">
+          <option value="will own the world!">will own the world!</option>
+          <option value="will still be strong and ferocious, but half the size with a silly name.">will still be strong and ferocious, but half the size with a silly name.</option>
+          <option value="will evolve to be cute and domesticated.">will evolve to be cute and domesticated.</option>
+          <option value="will get to the ice age and freeze in a glacier.">will get to the ice age and freeze in a glacier.</option>
+          <option value="will never survive the meteor.">will never survive the meteor.</option>
+        </select>
+      </label>
+      <button type="submit">Leave comment</button>
+    </form>
+    <% if (creature.comments.length) { %>
+      <% creature.comments.forEach(function(comment) { %>
+        <div><a href=""><%= comment.author %></a> thinks <%= creature.name %> <%= comment.rating %> They <%= comment.content %></div>
+      <% }) %> 
+    <% } else { %>
+      <h3>No comments yet.</h3>
+    <% } %>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
