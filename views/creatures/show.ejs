@@ -22,12 +22,12 @@
     <div><%= creature.walking %></div>
     <div>Body Covering: </div>
     <div><%= creature.bodyCovering %></div>
-    <div><%= creature.wings ? 'This creature has wings' : 'This creature does not have wings' %></div>
-    <div><%= creature.flight ? 'This creature can fly' : 'This creature cannot fly' %></div>
+    <div><%= creature.wings ? 'This creature has wings.' : 'This creature does not have wings.' %></div>
+    <div><%= creature.flight ? 'This creature can fly.' : 'This creature cannot fly.' %></div>
     <div hidden>Element: </div>
     <div hidden><%= creature.element %></div>
     <ul>
-    <% if (creature.owner.equals(user?.profile._id)) { %>
+    <% if (creature.profile.equals(user?.profile._id)) { %>
       <form action="/creatures/new" method="GET">
         <button class="btn" type="submit">Give <%= creature.name %> a sibling</button>
       </form>

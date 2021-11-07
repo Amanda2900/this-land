@@ -22,7 +22,7 @@ function newCreature(req, res) {
 }
 
 function create(req, res) {
-  req.body.owner = req.user.profile._id
+  req.body.profile = req.user.profile._id
   req.body.wings = !!req.body.wings
   req.body.flight = !!req.body.flight
   Creature.create(req.body)
@@ -37,7 +37,7 @@ function create(req, res) {
 
 function show(req, res) {
   Creature.findById(req.params.id)
-  .populate("owner")
+  .populate("profile")
   .then(creature => {
     res.render('creatures/show', {
       creature,
@@ -67,7 +67,7 @@ function edit(req, res) {
 function update(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
-    if (creature.owner.equals(req.user.profile._id)) {
+    if (creature.profile.equals(req.user.profile._id)) {
       req.body.wings = !!req.body.wings
       req.body.flight = !!req.body.flight
       creature.updateOne(req.body, {new: true})
@@ -87,7 +87,7 @@ function update(req, res) {
 function deleteCreature(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
-    if (creature.owner.equals(req.user.profile._id)) {
+    if (creature.profile.equals(req.user.profile._id)) {
       creature.delete()
       .then(() => {
         res.redirect('/creatures')
@@ -103,7 +103,7 @@ function deleteCreature(req, res) {
 }
 
 function createComment(req, res) {
-  req.body.authorId = req.user.profile._id
+  req.body.profile = req.user.profile._id
   req.body.author = req.user.profile.name
   Creature.findById(req.params.id)
   .then(creature => {

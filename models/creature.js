@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const commentSchema = new mongoose.Schema({
-  authorId: {
+  profile: {
     type: mongoose.Schema.Types.ObjectId, 
     'ref': 'Profile'},
   author: String,
@@ -87,7 +87,7 @@ const creatureSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  owner: {
+  profile: {
     type: mongoose.Schema.Types.ObjectId, 
     'ref': 'Profile'},
   comments: [commentSchema]

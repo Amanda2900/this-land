@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <main>
+    <% if (profile.avatar) { %>
+      <div>
+        <img 
+          class="profile-avatar"
+          src="<%= profile.avatar %>" 
+          alt="<%= profile.name %> avatar"
+        >
+      </div>
+    <% } %>
+    <% creatures.forEach(creature => { %>
+      <% if (creature.profile.equals(user?.profile._id)) { %>
+        <h3>
+          <a href="/creatures/<%= creature._id %>"><%= creature.name %></a>
+        </h3>
+      <% } %>
+    <% }) %>
+  </main>
+</main>
+<%- include('../partials/footer') %>

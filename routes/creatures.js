@@ -10,7 +10,7 @@ router.get('/:id', isLoggedIn, creaturesCtrl.show)
 router.get('/:id/edit', isLoggedIn, creaturesCtrl.edit)
 
 router.post('/', isLoggedIn, creaturesCtrl.create)
-router.post('/:id/comments', creaturesCtrl.createComment)
+router.post('/:id/comments', isLoggedIn, creaturesCtrl.createComment)
 
 router.put('/:id', isLoggedIn, creaturesCtrl.update)
 
