@@ -32,7 +32,7 @@
     <ul>
     <% if (creature.profile.equals(user?.profile._id)) { %>
       <form action="/creatures/new" method="GET">
-        <button class="btn" type="submit">Give <%= creature.name %> a sibling</button>
+        <button class="btn" type="submit">Give <%= creature.name %> a friend</button>
       </form>
       <form action="/creatures/<%= creature._id %>/edit" method="GET">
         <button class="btn" type="submit">Edit <%= creature.name %></button>
@@ -44,41 +44,45 @@
   </section>
   <section class="comments"></section>
     <h2>Comments</h2>
-    <% if (creature.dragon) { %> 
-      <h3><%= creature.name %> is a dragon. Your comments mean nothing. They own the universe!</h3>
-      <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
-        <label for="dragonChoice"><%= user.profile.name %>
-          <select name="dragonChoice">
-            <option selected value="wants to leave an offering.">wants to leave an offering.</option>
-            <option value="wants to fight the dragon.">wants to fight the dragon.</option>
-            <option value="wants to domesticate the dragon.">wants to domesticate the dragon.</option>
-          </select>
-        </label>
-        <button type="submit">Approach <%= creature.name %></button>
-      </form>
+    <% if (profileKilled) { %> 
+      <h3>You're dead. <%= creature.name %> ate you.You can't leave any more comments here.</h3>
     <% } else { %> 
-      <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
-        <div><%= user.profile.name %></div>
-        <label for="rating"><%= creature.name %>
-          <select name="rating">
-            <option selected value="is the king of the dinosaurs and rules This Land!">is the king of the dinosaurs and rules This Land!</option>
-            <option value="will live long and prosper.">will live long and prosper.</option>
-            <option value="is a great conversationalist, but weak DNA.">is a great conversationalist, but weak DNA.</option>
-            <option value="smells nice and looks tasty.">smells nice and looks tasty.</option>
-            <option value="will make it 10 feet and get stuck in a tar pit.">will make it 10 feet and get stuck in a tar pit.</option>
-          </select>
-        </label>
-        <label for="content">They
-          <select name="content">
-            <option value="will own the world!">will own the world!</option>
-            <option value="will still be strong and ferocious, but half the size with a silly name.">will still be strong and ferocious, but half the size with a silly name.</option>
-            <option value="will evolve to be cute and domesticated.">will evolve to be cute and domesticated.</option>
-            <option value="will get to the ice age and freeze in a glacier.">will get to the ice age and freeze in a glacier.</option>
-            <option value="will never survive the meteor.">will never survive the meteor.</option>
-          </select>
-        </label>
-        <button type="submit">Leave comment</button>
-      </form>
+      <% if (creature.dragon) { %> 
+        <h3><%= creature.name %> is a dragon. Your comments mean nothing. They own the universe!</h3>
+        <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+          <label for="dragonChoice"><%= user.profile.name %>
+            <select name="dragonChoice">
+              <option selected value="wants to leave an offering.">wants to leave an offering.</option>
+              <option value="wants to fight the dragon.">wants to fight <%= creature.name %>.</option>
+              <option value="wants to domesticate the dragon.">wants to domesticate <%= creature.name %>.</option>
+            </select>
+          </label>
+          <button type="submit">Approach <%= creature.name %></button>
+        </form>
+      <% } else { %> 
+        <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+          <div><%= user.profile.name %></div>
+          <label for="rating"><%= creature.name %>
+            <select name="rating">
+              <option selected value="is the king of the dinosaurs and rules This Land!">is the king of the dinosaurs and rules This Land!</option>
+              <option value="will live long and prosper.">will live long and prosper.</option>
+              <option value="is a great conversationalist, but weak DNA.">is a great conversationalist, but weak DNA.</option>
+              <option value="smells nice and looks tasty.">smells nice and looks tasty.</option>
+              <option value="will make it 10 feet and get stuck in a tar pit.">will make it 10 feet and get stuck in a tar pit.</option>
+            </select>
+          </label>
+          <label for="content">They
+            <select name="content">
+              <option value="will own the world!">will own the world!</option>
+              <option value="will still be strong and ferocious, but half the size with a silly name.">will still be strong and ferocious, but half the size with a silly name.</option>
+              <option value="will evolve to be cute and domesticated.">will evolve to be cute and domesticated.</option>
+              <option value="will get to the ice age and freeze in a glacier.">will get to the ice age and freeze in a glacier.</option>
+              <option value="will never survive the meteor.">will never survive the meteor.</option>
+            </select>
+          </label>
+          <button type="submit">Leave comment</button>
+        </form>
+      <% } %>
     <% } %> 
     <% if (creature.comments.length) { %>
       <% if (creature.dragon) { %> 
@@ -87,10 +91,10 @@
             <div><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> left <%= creature.name %> an offering.</div>
           <% } %> 
           <% if (comment.dragonChoice === "wants to fight the dragon.") { %>
-            <div><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> tried to fight <%= creature.name %> and is dead.</div>
+            <div><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> is dead becuase they tried to fight <%= creature.name %>.</div>
           <% } %> 
           <% if (comment.dragonChoice === "wants to domesticate the dragon.") { %>
-            <div><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> tried to domesticate <%= creature.name %> and is dead.</div>
+            <div><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> is dead because they tried to domesticate <%= creature.name %>.</div>
           <% } %>
         <% }) %> 
       <% } else { %> 

@@ -1,8 +1,8 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>You have created a Dragon!</h1>
 <main>
+  <h1>You have created a Dragon!</h1>
   <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
     <label for="element">What element does your dragon control?
       <select name="element">

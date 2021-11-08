@@ -1,5 +1,6 @@
 import { Creature } from '../models/creature.js'
 import { isLoggedIn } from '../middleware/middleware.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Creature.find({})
@@ -50,9 +51,13 @@ function show(req, res) {
   Creature.findById(req.params.id)
   .populate("profile")
   .then(creature => {
-    
+    const profileKilled = creature.kills.some(kill => {
+      return kill._id.equals(req.user.profile._id)
+
+    })
     res.render('creatures/show', {
       creature,
+      profileKilled,
       title: "Creature Name"
     })
   })
@@ -120,7 +125,11 @@ function createComment(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
     creature.comments.push(req.body)
+    if (req.body.dragonChoice === 'wants to fight the dragon.' || req.body.dragonChoice === 'wants to domesticate the dragon.') {
+      creature.kills.push(req.user.profile._id)
+    }
     creature.save()
+
     res.redirect(`/creatures/${creature._id}`)
   })
   .catch(err => {

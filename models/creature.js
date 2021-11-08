@@ -5,7 +5,6 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, 
     'ref': 'Profile'},
   author: String,
-  dead: false,
   rating: {
     type: String,
     enum: ['is the king of the dinosaurs and rules This Land!', 
@@ -98,7 +97,12 @@ const creatureSchema = new mongoose.Schema({
   profile: {
     type: mongoose.Schema.Types.ObjectId, 
     'ref': 'Profile'},
-  comments: [commentSchema]
+  comments: [commentSchema],
+  kills: [
+    {
+      type: mongoose.Schema.Types.ObjectId, 
+      'ref': 'Profile'},
+  ]
     
 }, {
   timestamps: true
