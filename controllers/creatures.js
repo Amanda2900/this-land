@@ -39,6 +39,7 @@ function show(req, res) {
   Creature.findById(req.params.id)
   .populate("profile")
   .then(creature => {
+    
     res.render('creatures/show', {
       creature,
       title: "Creature Name"
