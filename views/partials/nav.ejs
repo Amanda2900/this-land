@@ -4,10 +4,11 @@
 </head>
 <body>
   <nav>
-    <a href="/">Home</a>
-    <a href="/creatures">Creatures</a>
+    <a href="/"><button type="submit">Home</button></a>
+    <a href="/creatures"><button type="submit">Creatures</button></a>
     <% if (user) { %>
-      <a href="/profiles">Users</a>
+      <a href="/profiles/<% user.profile.id %> "><button type="submit">My Profile</button></a>
+      <a href="/profiles"><button type="submit">Users</button></a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
