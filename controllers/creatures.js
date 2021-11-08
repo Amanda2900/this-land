@@ -27,7 +27,18 @@ function create(req, res) {
   req.body.flight = !!req.body.flight
   Creature.create(req.body)
   .then(creature => {
-    res.redirect(`/creatures/${creature._id}`)
+    if (creature.animalClass === 'Reptile' && creature.size === 'Extra Large' && creature.food === 'Carnivore' && creature.defense === 'Claws' && creature.walking === 'Quadruped' && creature.bodyCovering === 'Scales' && creature.wings === true && creature.flight === true) {
+      creature.dragon = true
+      creature.save()
+    }
+    if (creature.dragon) {
+      res.render('creatures/dragon', {
+        creature,
+        title: 'Complete Dragon'
+      })
+    } else {
+      res.redirect(`/creatures/${creature._id}`)
+    }
   })
   .catch(err => {
     console.log(err)
@@ -54,9 +65,9 @@ function show(req, res) {
 function edit(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
-    res.render('creatures/edit', {
-      creature,
-      title: `edit ${creature.name}`
+      res.render('creatures/edit', {
+        creature,
+        title: `edit ${creature.name}`
     })
   })
   .catch(err => {

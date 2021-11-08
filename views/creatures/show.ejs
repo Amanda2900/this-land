@@ -25,8 +25,10 @@
     <div><%= creature.bodyCovering %></div>
     <div><%= creature.wings ? 'This creature has wings.' : 'This creature does not have wings.' %></div>
     <div><%= creature.flight ? 'This creature can fly.' : 'This creature cannot fly.' %></div>
-    <div hidden>Element: </div>
-    <div hidden><%= creature.element %></div>
+    <% if (creature.dragon) { %> 
+      <div>Element: </div>
+      <div><%= creature.element %></div>
+    <% } %> 
     <ul>
     <% if (creature.profile.equals(user?.profile._id)) { %>
       <form action="/creatures/new" method="GET">
@@ -43,8 +45,8 @@
   <section class="comments"></section>
     <h2>Comments</h2>
     <% if (creature.dragon) { %> 
+      <h3><%= creature.name %> is a dragon. Your comments mean nothing. They own the universe!</h3>
       <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
-        <div><%= user.profile.name %></div>
         <label for="dragonChoice"><%= user.profile.name %>
           <select name="dragonChoice">
             <option selected value="wants to leave an offering.">wants to leave an offering.</option>
@@ -52,7 +54,7 @@
             <option value="wants to domesticate the dragon.">wants to domesticate the dragon.</option>
           </select>
         </label>
-        <button type="submit">Leave comment</button>
+        <button type="submit">Approach <%= creature.name %></button>
       </form>
     <% } else { %> 
       <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">

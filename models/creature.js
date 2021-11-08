@@ -5,6 +5,7 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, 
     'ref': 'Profile'},
   author: String,
+  dead: false,
   rating: {
     type: String,
     enum: ['is the king of the dinosaurs and rules This Land!', 

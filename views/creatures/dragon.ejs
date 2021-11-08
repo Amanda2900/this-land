@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>You have created a Dragon!</h1>
+<main>
+  <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
+    <label for="element">What element does your dragon control?
+      <select name="element">
+        <option selected value="Ice">Ice</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Fire">Fire</option>
+        <option value="Water">Water</option>
+        <option value="Earth">Earth</option>
+        <option value="Psychic">Psychic</option>
+      </select>
+    </label>
+    <button type="submit">Complete your dragon!</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
