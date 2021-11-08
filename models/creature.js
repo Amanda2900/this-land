@@ -22,7 +22,14 @@ const commentSchema = new mongoose.Schema({
       'will get to the ice age and freeze in a glacier.', 
       'will never survive the meteor.'],
     default: 'will own the world!'
-    } 
+    },
+  dragonChoice: {
+    type: String,
+    enum: ['wants to leave an offering.', 
+      'wants to fight the dragon.', 
+      'wants to domesticate the dragon.',],
+    default: 'wants to leave an offering.'
+  }
   }, {
     timestamps: true
   })

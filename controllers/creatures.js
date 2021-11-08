@@ -27,11 +27,11 @@ function create(req, res) {
   req.body.flight = !!req.body.flight
   Creature.create(req.body)
   .then(creature => {
-    res.redirect('/creatures')
+    res.redirect(`/creatures/${creature._id}`)
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/creatures')
+    res.redirect('/creatures/')
   })
 }
 
