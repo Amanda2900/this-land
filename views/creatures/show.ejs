@@ -4,6 +4,25 @@
 
 <main>
   <section class="title">
+    <!-- <% if (creature.dragon === true) { %> 
+      <img src="/images/img/icons/dragon.png" alt="dragon" class="top-dino">
+    <% } else { %> 
+      <% if (creature.animalClass === 'Mammal') { %> 
+        <img src="/images/img/icons/smilodon.png" alt="smilodon" class="top-dino">
+      <% } %>
+      <% if (creature.animalClass === 'Reptile') { %> 
+        <img src="/images/img/icons/tyrannosaurus.png" alt="tyrannosaurus" class="top-dino">
+      <% } %>
+      <% if (creature.animalClass === 'Bird') { %> 
+        <img src="/images/img/icons/hawk.png" alt="hawk">
+      <% } %>
+      <% if (creature.animalClass === 'Insect') { %> 
+        <img src="/images/img/icons/insect.png" alt="insect" class="top-dino">
+      <% } %>
+      <% if (creature.animalClass === 'Amphibian') { %> 
+        <img src="/images/img/icons/newt.png" alt="newt" class="top-dino">
+      <% } %>
+    <% } %>  -->
     <h1><%= creature.name %>'s Info</h1>
     <h2>Created by <a href="/profiles/<%= creature.profile.id %> "><%= creature.profile.name %></a></h2>
   </section>
