@@ -75,13 +75,17 @@
           <option value="Exoskeleton">Exoskeleton</option>
         </select>
       </label>
-      <label for="wings">
-        Does <%= creature.name %> have wings?
-        <input type="checkbox" name="wings" <%= creature.wings ? "checked" : "" %>>
+      <label for="wings"> Does the Creature have wings?
+        <select name="wings">
+          <option value="No">No</option>
+          <option selected value="Yes">Yes</option>
+        </select>
       </label>
-      <label for="flight">
-        Can <%= creature.name %> fly?
-        <input type="checkbox" name="flight" <%= creature.flight ? "checked" : "" %> >
+      <label for="flight"> Can the Creature fly?
+        <select name="flight">
+          <option value="No">No</option>
+          <option selected value="Yes">Yes</option>
+        </select>
       </label>
       <% if (creature.dragon) { %> 
         <label for="element">What element does <%= creature.name %> control?

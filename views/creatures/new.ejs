@@ -9,7 +9,7 @@
         <input type="text" name="name" placeholder="Enter name here" autocomplete="off">
       </label>
       <label for="sciName">Creature's scientific name:
-        <input type="text" name="sciName" placeholder="Enter scientific name here" autocomplete="off">
+        <input type="text" name="sciName" placeholder="Enter scientific name" autocomplete="off">
       </label>
       <label for="animalClass">Creature's class?
         <select name="animalClass">
@@ -35,6 +35,7 @@
           <option value="Ocean">Ocean</option>
           <option value="Jungle">Jungle</option>
           <option value="Grasslands">Grasslands</option>
+          <option value="Desert">Desert</option>
           <option value="Tundra">Tundra</option>
         </select>
       </label>
@@ -75,13 +76,17 @@
           <option value="Exoskeleton">Exoskeleton</option>
         </select>
       </label>
-      <label for="wings">
-        Does the Creature have wings?
-        <input type="checkbox" name="wings">
+      <label for="wings"> Does the Creature have wings?
+        <select name="wings">
+          <option value="No">No</option>
+          <option selected value="Yes">Yes</option>
+        </select>
       </label>
-      <label for="flight">
-        Can the Creature fly?
-        <input type="checkbox" name="flight">
+      <label for="flight"> Can the Creature fly?
+        <select name="flight">
+          <option value="No">No</option>
+          <option selected value="Yes">Yes</option>
+        </select>
       </label>
       <button type="submit">Create Creature</button>
     </form>

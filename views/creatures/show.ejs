@@ -6,30 +6,89 @@
   <h1><%= creature.name %>'s Info</h1>
   <h2>Created by <a href="/profiles/<%= creature.profile.id %> "><%= creature.profile.name %></a></h2>
   <section>
-    <div>Name: </div>
-    <div><%= creature.name %></div>
-    <div>Scientific Name: </div>
-    <div><%= creature.sciName %></div>
-    <div>Class: </div>
-    <div><%= creature.animalClass %></div>
-    <div>Size: </div>
-    <div><%= creature.size %></div>
-    <div>Habitat:</div>
-    <div><%= creature.habitat %></div>
-    <div>Type: </div>
-    <div><%= creature.food %></div>
-    <div>Main Defense: </div>
-    <div><%= creature.defense %></div>
-    <div>How it Walks: </div>
-    <div><%= creature.walking %></div>
-    <div>Body Covering: </div>
-    <div><%= creature.bodyCovering %></div>
-    <div><%= creature.wings ? `${creature.name} has wings.` : `${creature.name} does not have wings.` %></div>
-    <div><%= creature.flight ? `${creature.name} can fly.` : `${creature.name} cannot fly.` %></div>
-    <% if (creature.dragon) { %> 
-      <div>Element: </div>
-      <div><%= creature.element %></div>
-    <% } %> 
+    <h2><%= creature.name %></h2>
+    <h3><%= creature.sciName %></h3>
+    <% if (creature.dragon === true) { %> 
+      <img src="/images/img/icons/dragon.png" alt="dragon">
+      <h3>Dragon</h3>
+      <% if (creature.element === 'Ice') { %> 
+        <img src="/images/img/icons/snowflake.png" alt="snowflake">
+      <% } %>
+      <% if (creature.element === 'Electricity') { %> 
+        <img src="/images/img/icons/lightning.png" alt="lightning-bolt">
+      <% } %>
+      <% if (creature.element === 'Fire') { %> 
+        <img src="/images/img/icons/fire.png" alt="fire">
+      <% } %>
+      <% if (creature.element === 'Water') { %> 
+        <img src="/images/img/icons/water.png" alt="water">
+      <% } %>
+      <% if (creature.element === 'Earth') { %> 
+        <img src="/images/img/icons/rocks.png" alt="rocks">
+      <% } %>
+      <% if (creature.element === 'Psychic') { %> 
+        <img src="/images/img/icons/hand.png" alt="psychic-hand">
+      <% } %>
+      <h3><%= creature.element %> Dragon</h3>
+    <% } else { %> 
+      <% if (creature.animalClass === 'Mammal') { %> 
+        <img src="/images/img/icons/smilodon.png" alt="smilodon">
+      <% } %>
+      <% if (creature.animalClass === 'Reptile') { %> 
+        <img src="/images/img/icons/tyrannosaurus.png" alt="tyrannosaurus">
+      <% } %>
+      <% if (creature.animalClass === 'Bird') { %> 
+        <img src="/images/img/icons/hawk.png" alt="hawk">
+      <% } %>
+      <% if (creature.animalClass === 'Insect') { %> 
+        <img src="/images/img/icons/insect.png" alt="insect">
+      <% } %>
+      <% if (creature.animalClass === 'Amphibian') { %> 
+        <img src="/images/img/icons/newt.png" alt="newt">
+      <% } %>
+      <h3><%= creature.animalClass %></h3>
+    <% } %>
+    <img src="/images/img/icons/ruler.png" alt="L-shaped-ruler">
+    <h3><%= creature.size %></h3>
+    <% if (creature.habitat === 'Forest') { %> 
+      <img src="/images/img/icons/tree.png" alt="fir-trees">
+    <% } %>
+    <% if (creature.habitat === 'Ocean') { %> 
+      <img src="/images/img/icons/wave.png" alt="ocean-wave">
+    <% } %>
+    <% if (creature.habitat === 'Jungle') { %> 
+      <img src="/images/img/icons/jungle.png" alt="jungle-leaf">
+    <% } %>
+    <% if (creature.habitat === 'Grasslands') { %> 
+      <img src="/images/img/icons/grass-leaves.png" alt="grass">
+    <% } %>
+    <% if (creature.habitat === 'Desert') { %> 
+      <img src="/images/img/icons/desert.png" alt="desert">
+    <% } %>
+    <% if (creature.habitat === 'Tundra') { %> 
+      <img src="/images/img/icons/mountain.png" alt="mountains">
+    <% } %>
+    <h3><%= creature.habitat %> Habitat</h3>
+    <% if (creature.food === 'Omnivore') { %> 
+      <img src="/images/img/icons/sandwich.png" alt="hamburger">
+    <% } %>
+    <% if (creature.food === 'Herbivore') { %> 
+      <img src="/images/img/icons/leaf.png" alt="leaf">
+    <% } %>
+    <% if (creature.food === 'Carnivore') { %> 
+      <img src="/images/img/icons/chicken-leg.png" alt="chicken-leg">
+    <% } %>
+    <h3><%= creature.food %></h3>
+    <img src="/images/img/icons/security.png" alt="shield">
+    <h3><%= creature.defense %></h3>
+    <img src="/images/img/icons/footprint.png" alt="paw-print">
+    <h3><%= creature.walking %></h3>
+    <img src="/images/img/icons/feather.png" alt="feather">
+    <h3><%= creature.bodyCovering %></h3>
+    <img src="/images/img/icons/wings.png" alt="wings">
+    <h3><%= creature.wings ? `${creature.name} has wings.` : `${creature.name} does not have wings.` %></h3>
+    <img src="/images/img/icons/superhero.png" alt="superhero-flying">
+    <h3><%= creature.flight ? `${creature.name} can fly.` : `${creature.name} cannot fly.` %></h3>
     <ul>
     <% if (creature.profile.equals(user?.profile._id)) { %>
       <form action="/creatures/new" method="GET">
@@ -43,7 +102,7 @@
       </form>
     <% } %>
   </section>
-  <section class="comments"></section>
+  <section class="comments">
     <h2>Comments</h2>
     <% if (profileKilled) { %> 
       <h3>You're dead. <%= creature.name %> ate you.You can't leave any more comments here.</h3>

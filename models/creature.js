@@ -11,8 +11,7 @@ const commentSchema = new mongoose.Schema({
       'will live long and prosper.', 
       'is a great conversationalist, but weak DNA.',
       'smells nice and looks tasty.', 
-      'will make it 10 feet and get stuck in a tar pit.'],
-      default: 'is the king of the dinosaurs and rules This Land!'
+      'will make it 10 feet and get stuck in a tar pit.']
     },
   content: {
     type: String,
@@ -20,15 +19,13 @@ const commentSchema = new mongoose.Schema({
       'will still be strong and ferocious, but half the size with a silly name.', 
       'will evolve to be cute and domesticated.',
       'will get to the ice age and freeze in a glacier.', 
-      'will never survive the meteor.'],
-    default: 'will own the world!'
+      'will never survive the meteor.']
     },
   dragonChoice: {
     type: String,
     enum: ['wants to leave an offering.', 
       'wants to fight the dragon.', 
-      'wants to domesticate the dragon.',],
-    default: 'wants to leave an offering.'
+      'wants to domesticate the dragon.',]
   }
   }, {
     timestamps: true
@@ -45,46 +42,39 @@ const creatureSchema = new mongoose.Schema({
   },
   animalClass: {
     type: String,
-    enum: ['Mammal', 'Reptile', 'Bird', 'Insect', 'Amphibian'],
-    default: 'Mammal'
+    enum: ['Mammal', 'Reptile', 'Bird', 'Insect', 'Amphibian']
   },
   size: {
     type: String,
-    enum: ['Extra Small', 'Small', 'Medium', 'Large', 'Extra Large'],
-    default: 'Extra Small'
+    enum: ['Extra Small', 'Small', 'Medium', 'Large', 'Extra Large']
   },
   habitat: {
     type: String,
-    enum: ['Forest', 'Ocean', 'Jungle', 'Grasslands', 'Dessert', 'Tundra'],
-    default: 'Forest'
+    enum: ['Forest', 'Ocean', 'Jungle', 'Grasslands', 'Desert', 'Tundra']
   },
   food: {
     type: String,
-    enum: ['Omnivore', 'Herbivore', 'Carnivore'],
-    default: 'Omnivore'
+    enum: ['Omnivore', 'Herbivore', 'Carnivore']
   },
   defense: {
     type: String,
-    enum: ['Spikes', 'Claws', 'Shell', 'Poison', 'Fangs', 'Horns'],
-    default: 'Spikes'
+    enum: ['Spikes', 'Claws', 'Shell', 'Poison', 'Fangs', 'Horns']
   },
   walking: {
     type: String,
-    enum: ['Biped', 'Quadruped', 'Hexaped', 'Octoped', 'Myriapoda', "Limbless"],
-    default: 'Biped'
+    enum: ['Biped', 'Quadruped', 'Hexaped', 'Octoped', 'Myriapoda', "Limbless"]
   },
   bodyCovering: {
     type: String,
-    enum: ['Feathers', 'Thick Fur', 'Thin Hair','Scales', 'Mucous', 'Exoskeleton'],
-    default: 'Feathers'
+    enum: ['Feathers', 'Thick Fur', 'Thin Hair','Scales', 'Mucous', 'Exoskeleton']
   },
   wings: {
-    type: Boolean,
-    default: false
+    type: String,
+    enum: ['No', 'Yes']
   },
   flight: {
-    type: Boolean,
-    default: false
+    type: String,
+    enum: ['No', 'Yes']
   },
   element: {
     type: String,

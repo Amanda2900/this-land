@@ -24,11 +24,9 @@ function newCreature(req, res) {
 
 function create(req, res) {
   req.body.profile = req.user.profile._id
-  req.body.wings = !!req.body.wings
-  req.body.flight = !!req.body.flight
   Creature.create(req.body)
   .then(creature => {
-    if (creature.animalClass === 'Reptile' && creature.size === 'Extra Large' && creature.food === 'Carnivore' && creature.defense === 'Claws' && creature.walking === 'Quadruped' && creature.bodyCovering === 'Scales' && creature.wings === true && creature.flight === true) {
+    if (creature.animalClass === 'Reptile' && creature.size === 'Extra Large' && creature.food === 'Carnivore' && creature.defense === 'Claws' && creature.walking === 'Quadruped' && creature.bodyCovering === 'Scales' && creature.wings === 'Yes' && creature.flight === 'Yes') {
       creature.dragon = true
       creature.save()
     }
@@ -38,6 +36,7 @@ function create(req, res) {
         title: 'Complete Dragon'
       })
     } else {
+      creature.save()
       res.redirect(`/creatures/${creature._id}`)
     }
   })
@@ -85,8 +84,6 @@ function update(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
     if (creature.profile.equals(req.user.profile._id)) {
-      req.body.wings = !!req.body.wings
-      req.body.flight = !!req.body.flight
       creature.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/creatures/${creature._id}`)
