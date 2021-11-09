@@ -21,12 +21,55 @@
         <div class="col">
           <a class="text-decoration-none" href="/creatures/<%= creature._id %>">
             <div class="card mb-4 shadow-sm">
-              <img
-                class="card-img-top"
-                src=""
-                alt="A placeholder avatar"
-                width="100%"
-              />
+              <% if (creature.dragon) { %> 
+                <img
+                  class="card-img-top"
+                  src="/images/img/icons/dragon.png"
+                  alt="dragon"
+                  width="100%"
+                />
+              <% } else { %> 
+                <% if (creature.animalClass === 'Mammal') { %> 
+                  <img
+                    class="card-img-top"
+                    src="/images/img/icons/smilodon.png"
+                    alt="smilodon"
+                    width="100%"
+                  />
+                <% } %> 
+                <% if (creature.animalClass === 'Reptile') { %> 
+                  <img
+                    class="card-img-top"
+                    src="/images/img/icons/tyrannosaurus.png"
+                    alt="tyrannosaurus"
+                    width="100%"
+                  />
+                <% } %>
+                <% if (creature.animalClass === 'Bird') { %> 
+                  <img
+                    class="card-img-top"
+                    src="/images/img/icons/hawk.png"
+                    alt="hawk"
+                    width="100%"
+                  />
+                <% } %>
+                <% if (creature.animalClass === 'Insect') { %> 
+                  <img
+                    class="card-img-top"
+                    src="/images/img/icons/insect.png"
+                    alt="insect"
+                    width="100%"
+                  />
+                <% } %>
+                <% if (creature.animalClass === 'Amphibian') { %> 
+                  <img
+                    class="card-img-top"
+                    src="/images/img/icons/newt.png"
+                    alt="newt"
+                    width="100%"
+                  />
+                <% } %>
+              <% } %> 
               <div class="card-body">
                 <p class="card-title fs-3 text-dark"><%= creature.name %></p>
               </div>
