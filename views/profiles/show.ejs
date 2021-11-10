@@ -17,7 +17,7 @@
       class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4"
     >
     <% creatures.forEach(creature => { %>
-      <% if (creature.profile.equals(user?.profile._id)) { %>
+      <% if (creature.profile.equals(profile._id)) { %>
         <div class="col">
           <a class="text-decoration-none" href="/creatures/<%= creature._id %>">
             <div class="card mb-4 shadow-sm">

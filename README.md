@@ -37,8 +37,8 @@ The game is deployed <a href="">here</a>.
 <h2>Built With</h2>
 <ul>
   <li><b>Font:</b> Google Fonts https://fonts.google.com/</li>  
-  <li><b>Buttons:</b> Bootstrap https://getbootstrap.com/docs/5.1/components/buttons/</li>
-  <li><b>Background Image:</b> Wallpaper Bat https://wallpaperbat.com/green-galaxy-wallpapers</li>
+  <li><b>Cards:</b> Bootstrap https://getbootstrap.com/docs/4.0/components/card/</li>
+  <li><b>Background Image:</b>Background vector created by upklyak https://www.freepik.com/vectors/background</li>
   <li><b>Favicon:</b> Token by Lars Meiertoberens from the Noun Project https://thenounproject.com/</li>
-  <li><b>Icons:</b> Flaticons by users: Smashicons, Icongeek26, Surang, and Freepik www.flaticon.com</li>
+  <li><b>Icons:</b> Flaticons by users: Smashicons, Icongeek26, Surang, and Freepik https://www.flaticon.com/</li>
 </ul>
