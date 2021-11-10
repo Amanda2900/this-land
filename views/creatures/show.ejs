@@ -45,7 +45,7 @@
                   <img src="/images/img/icons/snowflake.png" alt="snowflake">
                   <% } %>
                 <% if (creature.element==='Electricity' ) { %>
-                  <img src="/images/img/icons/lightning.png" alt="lightning-bolt">
+                  <img src="/images/img/icons/lightning.png" alt="lightning bolt">
                 <% } %>
                 <% if (creature.element==='Fire' ) { %>
                   <img src="/images/img/icons/fire.png" alt="fire">
@@ -57,7 +57,7 @@
                   <img src="/images/img/icons/rocks.png" alt="rocks">
                 <% } %>
                 <% if (creature.element==='Psychic' ) { %>
-                  <img src="/images/img/icons/hand.png" alt="psychic-hand">
+                  <img src="/images/img/icons/hand.png" alt="psychic hand">
                 <% } %>
               </td>
               <td>
@@ -95,7 +95,7 @@
               </tr>
               <% } %>
                 <tr>
-                  <td><img src="/images/img/icons/ruler.png" alt="L-shaped-ruler"></td>
+                  <td><img src="/images/img/icons/ruler.png" alt="L shaped ruler"></td>
                   <td>
                     <p>
                       <%= creature.size %>
@@ -103,13 +103,13 @@
                   </td>
                   <td>
                     <% if (creature.habitat==='Forest' ) { %>
-                      <img src="/images/img/icons/tree.png" alt="fir-trees">
+                      <img src="/images/img/icons/tree.png" alt="fir trees">
                     <% } %>
                     <% if (creature.habitat==='Ocean' ) { %>
-                      <img src="/images/img/icons/wave.png" alt="ocean-wave">
+                      <img src="/images/img/icons/wave.png" alt="ocean wave">
                     <% } %>
                     <% if (creature.habitat==='Jungle' ) { %>
-                      <img src="/images/img/icons/jungle.png" alt="jungle-leaf">
+                      <img src="/images/img/icons/jungle.png" alt="jungle leaf">
                     <% } %>
                     <% if (creature.habitat==='Grasslands' ) { %>
                       <img src="/images/img/icons/grass-leaves.png" alt="grass">
@@ -136,7 +136,7 @@
                       <img src="/images/img/icons/leaf.png" alt="leaf">
                     <% } %>
                     <% if (creature.food==='Carnivore' ) { %>
-                      <img src="/images/img/icons/chicken-leg.png" alt="chicken-leg">
+                      <img src="/images/img/icons/chicken-leg.png" alt="chicken leg">
                     <% } %>
                   </td>
                   <td>
@@ -171,7 +171,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><img src="/images/img/icons/footprint.png" alt="paw-print"></td>
+                  <td><img src="/images/img/icons/footprint.png" alt="paw print"></td>
                   <td>
                     <p>
                       <%= creature.walking %>
@@ -204,7 +204,14 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><img src="/images/img/icons/wings.png" alt="wings"></td>
+                  <td>
+                    <% if (creature.wings === 'Yes' ) { %>
+                      <img src="/images/img/icons/wings.png" alt="wings">
+                    <% } %>
+                    <% if (creature.wings === 'No' ) { %>
+                      <img src="/images/img/icons/no-wings.png" alt="no symbol over wings">
+                    <% } %>
+                  </td>
                   <td>
                     <p>
                       <%= creature.wings==='Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %>
