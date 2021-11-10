@@ -1,15 +1,93 @@
+
 img {
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  margin: 10px;
 }
 
-table,
-.title {
-  background-color: rgba(224, 209, 169, 0.8);
+h1 {
+  display: inline;
+  margin-left: 25px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+p{
+  font-size: 20px;
+}
+
+button {
+  margin: 10px;
+}
+
+select {
+  font-size: 18px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #46072f;
+  font-weight: bold;
+}
+
+a:hover {
+  color: white;
+}
+
+.stats {
   padding: 15px;
   -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   border-radius: 5%;
   margin: 10px 0;
+  border: 2px solid #46072f;
+  background-color: rgba(222, 196, 247, 0.8)
+}
+
+.comments {
+  padding: 25px;
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  border-radius: 5%;
+  margin: 10px 0 50px 0;
+  border: 2px solid #46072f;
+  background-color: rgba(222, 196, 247, 0.8)
+}
+
+.commentTitle {
+  margin-left: 275px;
+  font-size: 25px;
+}
+
+.bow {
+  margin-left: 50px;
+  margin-top: -5px;
+  font-size: 35px;
+}
+
+.strike {
+  text-decoration: line-through;
+  margin-left: 220px;
+}
+
+.eaten {
+  margin-left: 10px;
+  color: rgb(103, 3, 3);
+  font-size: 25px;
+}
+
+.rating {
+  margin-left: 100px;
+}
+
+.content {
+  margin-left: 40px;
+}
+
+.commentBtn {
+  margin-left: 250px;
 }
