@@ -13,93 +13,93 @@
       </label>
       <label for="animalClass"><%= creature.name %>'s class?
         <select name="animalClass">
-          <option selected value="Mammal">Mammal</option>
-          <option value="Reptile">Reptile</option>
-          <option value="Bird">Bird</option>
-          <option value="Insect">Insect</option>
-          <option value="Amphibian">Amphibian</option>
+          <option <%= creature.animalClass === "Mammal" ? "selected" : "" %> value="Mammal">Mammal</option>
+          <option <%= creature.animalClass === "Reptile" ? "selected" : "" %> value="Reptile">Reptile</option>
+          <option <%= creature.animalClass === "Bird" ? "selected" : "" %> value="Bird">Bird</option>
+          <option <%= creature.animalClass === "Insect" ? "selected" : "" %> value="Insect">Insect</option>
+          <option <%= creature.animalClass === "Amphibian" ? "selected" : "" %> value="Amphibian">Amphibian</option>
         </select>
       </label>
       <label for="size"><%= creature.name %>'s size?
         <select name="size">
-          <option selected value="Extra Small">Extra Small</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-          <option value="Extra Large">Extra Large</option>
+          <option <%= creature.size === "Extra Small" ? "selected" : "" %> value="Extra Small">Extra Small</option>
+          <option <%= creature.size === "Small" ? "selected" : "" %> value="Small">Small</option>
+          <option <%= creature.size === "Medium" ? "selected" : "" %> value="Medium">Medium</option>
+          <option <%= creature.size === "Large" ? "selected" : "" %> value="Large">Large</option>
+          <option <%= creature.size === "Extra Large" ? "selected" : "" %> value="Extra Large">Extra Large</option>
         </select>
       </label>
       <label for="habitat"><%= creature.name %>'s habitat?
         <select name="habitat">
-          <option selected value="Forest">Forest</option>
-          <option value="Ocean">Ocean</option>
-          <option value="Jungle">Jungle</option>
-          <option value="Grasslands">Grasslands</option>
-          <option value="Tundra">Tundra</option>
+          <option <%= creature.habitat === "Forest" ? "selected" : "" %> value="Forest">Forest</option>
+          <option <%= creature.habitat === "Ocean" ? "selected" : "" %> value="Ocean">Ocean</option>
+          <option <%= creature.habitat === "Jungle" ? "selected" : "" %> value="Jungle">Jungle</option>
+          <option <%= creature.habitat === "Grasslands" ? "selected" : "" %> value="Grasslands">Grasslands</option>
+          <option <%= creature.habitat === "Tundra" ? "selected" : "" %> value="Tundra">Tundra</option>
         </select>
       </label>
       <label for="food"><%= creature.name %>'s type?
         <select name="food">
-          <option selected value="Omnivore">Omnivore</option>
-          <option value="Herbivore">Herbivore</option>
-          <option value="Carnivore">Carnivore</option>
+          <option <%= creature.food === "Omnivore" ? "selected" : "" %> value="Omnivore">Omnivore</option>
+          <option <%= creature.food === "Herbivore" ? "selected" : "" %> value="Herbivore">Herbivore</option>
+          <option <%= creature.food === "Carnivore" ? "selected" : "" %> value="Carnivore">Carnivore</option>
         </select>
       </label>
       <label for="defense"><%= creature.name %>'s main defense?
         <select name="defense">
-          <option selected value="Spikes">Spikes</option>
-          <option value="Claws">Claws</option>
-          <option value="Shell">Shell</option>
-          <option value="Poison">Poison</option>
-          <option value="Fangs">Fangs</option>
-          <option value="Horns">Horns</option>
+          <option <%= creature.defense === "Spikes" ? "selected" : "" %> value="Spikes">Spikes</option>
+          <option <%= creature.defense === "Claws" ? "selected" : "" %> value="Claws">Claws</option>
+          <option <%= creature.defense === "Shell" ? "selected" : "" %> value="Shell">Shell</option>
+          <option <%= creature.defense === "Poison" ? "selected" : "" %> value="Poison">Poison</option>
+          <option <%= creature.defense === "Fangs" ? "selected" : "" %> value="Fangs">Fangs</option>
+          <option <%= creature.defense === "Horns" ? "selected" : "" %> value="Horns">Horns</option>
         </select>
       </label>
       <label for="walking"><%= creature.name %>'s way of walking?
         <select name="walking">
-          <option selected value="Biped">Biped</option>
-          <option value="Quadruped">Quadruped</option>
-          <option value="Hexaped">Hexaped</option>
-          <option value="Octoped">Octoped</option>
-          <option value="Myriapoda">Myriapoda</option>
-          <option value="Limbless">Limbless</option>
+          <option <%= creature.walking === "Biped" ? "selected" : "" %> value="Biped">Biped</option>
+          <option <%= creature.walking === "Quadruped" ? "selected" : "" %> value="Quadruped">Quadruped</option>
+          <option <%= creature.walking === "Hexaped" ? "selected" : "" %> value="Hexaped">Hexaped</option>
+          <option <%= creature.walking === "Octoped" ? "selected" : "" %> value="Octoped">Octoped</option>
+          <option <%= creature.walking === "Myriapoda" ? "selected" : "" %> value="Myriapoda">Myriapoda</option>
+          <option <%= creature.walking === "Limbless" ? "selected" : "" %> value="Limbless">Limbless</option>
         </select>
       </label>
       <label for="bodyCovering"><%= creature.name %>'s body covering?
         <select name="bodyCovering">
-          <option selected value="Feathers">Feathers</option>
-          <option value="Thick Fur">Thick Fur</option>
-          <option value="Thin Hair">Thin Hair</option>
-          <option value="Scales">Scales</option>
-          <option value="Mucous">Mucous</option>
-          <option value="Exoskeleton">Exoskeleton</option>
+          <option <%= creature.bodyCovering === "Feathers" ? "selected" : "" %> value="Feathers">Feathers</option>
+          <option <%= creature.bodyCovering === "Thick Fur" ? "selected" : "" %> value="Thick Fur">Thick Fur</option>
+          <option <%= creature.bodyCovering === "Thin Hair" ? "selected" : "" %> value="Thin Hair">Thin Hair</option>
+          <option <%= creature.bodyCovering === "Scales" ? "selected" : "" %> value="Scales">Scales</option>
+          <option <%= creature.bodyCovering === "Mucous" ? "selected" : "" %> value="Mucous">Mucous</option>
+          <option <%= creature.bodyCovering === "Exoskeleton" ? "selected" : "" %> value="Exoskeleton">Exoskeleton</option>
         </select>
       </label>
       <label for="wings"> Does the Creature have wings?
         <select name="wings">
-          <option value="No">No</option>
-          <option selected value="Yes">Yes</option>
+          <option <%= creature.wings === "No" ? "selected" : "" %> value="No">No</option>
+          <option <%= creature.wings === "Yes" ? "selected" : "" %> value="Yes">Yes</option>
         </select>
       </label>
       <label for="flight"> Can the Creature fly?
         <select name="flight">
-          <option value="No">No</option>
-          <option selected value="Yes">Yes</option>
+          <option <%= creature.flight === "No" ? "selected" : "" %> value="No">No</option>
+          <option <%= creature.flight === "Yes" ? "selected" : "" %> value="Yes">Yes</option>
         </select>
       </label>
       <% if (creature.dragon) { %> 
         <label for="element">What element does <%= creature.name %> control?
           <select name="element">
-            <option selected value="Ice">Ice</option>
-            <option value="Electricity">Electricity</option>
-            <option value="Fire">Fire</option>
-            <option value="Water">Water</option>
-            <option value="Earth">Earth</option>
-            <option value="Psychic">Psychic</option>
+            <option <%= creature.element === "Ice" ? "selected" : "" %> value="Ice">Ice</option>
+            <option <%= creature.element === "Electricity" ? "selected" : "" %> value="Electricity">Electricity</option>
+            <option <%= creature.element === "Fire" ? "selected" : "" %> value="Fire">Fire</option>
+            <option <%= creature.element === "Water" ? "selected" : "" %> value="Water">Water</option>
+            <option <%= creature.element === "Earth" ? "selected" : "" %> value="Earth">Earth</option>
+            <option <%= creature.element === "Psychic" ? "selected" : "" %> value="Psychic">Psychic</option>
           </select>
         </label>
       <% } %> 
-      <button type="submit">Save Changes</button>
+      <button type="submit" class="btn">Save Changes</button>
     </form>
   <% } %> 
 </main>
