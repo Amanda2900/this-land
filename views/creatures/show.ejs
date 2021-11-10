@@ -144,7 +144,26 @@
                       <%= creature.food %>
                     </p>
                   </td>
-                  <td><img src="/images/img/icons/security.png" alt="shield"></td>
+                  <td>
+                    <% if (creature.defense === 'Spikes' ) { %>
+                      <img src="/images/img/icons/hedgehog.png" alt="hedgehog">
+                    <% } %>
+                    <% if (creature.defense === 'Claws' ) { %>
+                      <img src="/images/img/icons/eagle.png" alt="eagle claws">
+                    <% } %>
+                    <% if (creature.defense === 'Shell' ) { %>
+                      <img src="/images/img/icons/turtle.png" alt="turtle">
+                    <% } %>
+                    <% if (creature.defense === 'Poison' ) { %>
+                      <img src="/images/img/icons/poison.png" alt="poison bottle">
+                    <% } %>
+                    <% if (creature.defense === 'Fangs' ) { %>
+                      <img src="/images/img/icons/fangs.png" alt="fangs">
+                    <% } %>
+                    <% if (creature.defense === 'Horns' ) { %>
+                      <img src="/images/img/icons/goat.png" alt="goat">
+                    <% } %>
+                  </td>
                   <td>
                     <p>
                       <%= creature.defense %>
@@ -158,7 +177,26 @@
                       <%= creature.walking %>
                     </p>
                   </td>
-                  <td><img src="/images/img/icons/feather.png" alt="feather"></td>
+                  <td>
+                    <% if (creature.bodyCovering === 'Feathers' ) { %>
+                      <img src="/images/img/icons/feather.png" alt="feather">
+                    <% } %>
+                    <% if (creature.bodyCovering === 'Thick Fur' ) { %>
+                      <img src="/images/img/icons/animal.png" alt="animal pelt">
+                    <% } %>
+                    <% if (creature.bodyCovering === 'Thin Hair' ) { %>
+                      <img src="/images/img/icons/dermathology.png" alt="hair">
+                    <% } %>
+                    <% if (creature.bodyCovering === 'Scales' ) { %>
+                      <img src="/images/img/icons/scales.png" alt="animal scales">
+                    <% } %>
+                    <% if (creature.bodyCovering === 'Mucous' ) { %>
+                      <img src="/images/img/icons/slime.png" alt="green slime">
+                    <% } %>
+                    <% if (creature.bodyCovering === 'Exoskeleton' ) { %>
+                      <img src="/images/img/icons/exoskeleton.png" alt="exoskeleton">
+                    <% } %>
+                  </td>
                   <td>
                     <p>
                       <%= creature.bodyCovering %>
@@ -172,7 +210,14 @@
                       <%= creature.wings==='Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %>
                     </p>
                   </td>
-                  <td><img src="/images/img/icons/superhero.png" alt="superhero-flying"></td>
+                  <td>
+                    <% if (creature.flight === 'No' ) { %>
+                      <img src="/images/img/icons/fly.png" alt="no symbol over a fly">
+                    <% } %>
+                    <% if (creature.flight === 'Yes' ) { %>
+                      <img src="/images/img/icons/superhero.png" alt="superhero flying">
+                    <% } %>
+                  </td>
                   <td>
                     <p>
                       <%= creature.flight==='Yes' ? `${creature.name} can fly` : `${creature.name} can't fly.` %>

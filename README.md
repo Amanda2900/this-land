@@ -40,5 +40,5 @@ The game is deployed <a href="">here</a>.
   <li><b>Buttons:</b> Bootstrap https://getbootstrap.com/docs/5.1/components/buttons/</li>
   <li><b>Background Image:</b> Wallpaper Bat https://wallpaperbat.com/green-galaxy-wallpapers</li>
   <li><b>Favicon:</b> Token by Lars Meiertoberens from the Noun Project https://thenounproject.com/</li>
-  <li><b>Icons:</b> Flaticon www.flaticon.com</li>
+  <li><b>Icons:</b> Flaticons by users: Smashicons, Icongeek26, Surang, and Freepik www.flaticon.com</li>
 </ul>
