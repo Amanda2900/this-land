@@ -17,10 +17,6 @@ p{
   font-size: 20px;
 }
 
-button {
-  margin: 10px;
-}
-
 select {
   font-size: 18px;
   text-align: center;
@@ -86,6 +82,10 @@ a:hover {
 
 .content {
   margin-left: 40px;
+}
+
+.btn {
+  margin: 10px;
 }
 
 .commentBtn {
