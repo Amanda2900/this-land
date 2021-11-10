@@ -1,94 +1,107 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/creatures/new.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <% if (user) { %> 
     <h1>Build a Creature</h1>
-    <form action="/creatures" method="POST">
-      <label for="name">Creature's name:
-        <input type="text" name="name" placeholder="Enter name here" autocomplete="off">
-      </label>
-      <label for="sciName">Creature's scientific name:
-        <input type="text" name="sciName" placeholder="Enter scientific name" autocomplete="off">
-      </label>
-      <label for="animalClass">Creature's class?
-        <select name="animalClass">
-          <option selected value="Mammal">Mammal</option>
-          <option value="Reptile">Reptile</option>
-          <option value="Bird">Bird</option>
-          <option value="Insect">Insect</option>
-          <option value="Amphibian">Amphibian</option>
-        </select>
-      </label>
-      <label for="size">Creature's size?
-        <select name="size">
-          <option selected value="Extra Small">Extra Small</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-          <option value="Extra Large">Extra Large</option>
-        </select>
-      </label>
-      <label for="habitat">Creature's habitat?
-        <select name="habitat">
-          <option selected value="Forest">Forest</option>
-          <option value="Ocean">Ocean</option>
-          <option value="Jungle">Jungle</option>
-          <option value="Grasslands">Grasslands</option>
-          <option value="Desert">Desert</option>
-          <option value="Tundra">Tundra</option>
-        </select>
-      </label>
-      <label for="food">Creature's type?
-        <select name="food">
-          <option selected value="Omnivore">Omnivore</option>
-          <option value="Herbivore">Herbivore</option>
-          <option value="Carnivore">Carnivore</option>
-        </select>
-      </label>
-      <label for="defense">Creature's main defense?
-        <select name="defense">
-          <option selected value="Spikes">Spikes</option>
-          <option value="Claws">Claws</option>
-          <option value="Shell">Shell</option>
-          <option value="Poison">Poison</option>
-          <option value="Fangs">Fangs</option>
-          <option value="Horns">Horns</option>
-        </select>
-      </label>
-      <label for="walking">Creature's way of walking?
-        <select name="walking">
-          <option selected value="Biped">Biped</option>
-          <option value="Quadruped">Quadruped</option>
-          <option value="Hexaped">Hexaped</option>
-          <option value="Octoped">Octoped</option>
-          <option value="Myriapoda">Myriapoda</option>
-          <option value="Limbless">Limbless</option>
-        </select>
-      </label>
-      <label for="bodyCovering">Creature's body covering?
-        <select name="bodyCovering">
-          <option selected value="Feathers">Feathers</option>
-          <option value="Thick Fur">Thick Fur</option>
-          <option value="Thin Hair">Thin Hair</option>
-          <option value="Scales">Scales</option>
-          <option value="Mucous">Mucous</option>
-          <option value="Exoskeleton">Exoskeleton</option>
-        </select>
-      </label>
-      <label for="wings"> Does the Creature have wings?
-        <select name="wings">
-          <option selected value="No">No</option>
-          <option value="Yes">Yes</option>
-        </select>
-      </label>
-      <label for="flight"> Can the Creature fly?
-        <select name="flight">
-          <option selected value="No">No</option>
-          <option value="Yes">Yes</option>
-        </select>
-      </label>
-      <button type="submit">Create Creature</button>
+    <table>
+      <form action="/creatures" method="POST">
+        <tr>
+          <td><label for="name"><h2>Creature's name:</h2></td>
+            <td><input type="text" name="name" placeholder="Enter name here" autocomplete="off"></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="sciName"><h2>Creature's scientific name:</h2></td>
+            <td><input type="text" name="sciName" placeholder="Enter scientific name" autocomplete="off"></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="animalClass"><h2>Creature's class?</h2></td>
+            <td><select name="animalClass">
+              <option selected value="Mammal">Mammal</option>
+              <option value="Reptile">Reptile</option>
+              <option value="Bird">Bird</option>
+              <option value="Insect">Insect</option>
+              <option value="Amphibian">Amphibian</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="size"><h2>Creature's size?</h2></td>
+            <td><select name="size">
+              <option selected value="Extra Small">Extra Small</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Extra Large">Extra Large</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="food"><h2>Creature's type?</h2></td>
+            <td><select name="food">
+              <option selected value="Omnivore">Omnivore</option>
+              <option value="Herbivore">Herbivore</option>
+              <option value="Carnivore">Carnivore</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="defense"><h2>Creature's main defense?</h2></td>
+            <td><select name="defense">
+              <option selected value="Spikes">Spikes</option>
+              <option value="Claws">Claws</option>
+              <option value="Shell">Shell</option>
+              <option value="Poison">Poison</option>
+              <option value="Fangs">Fangs</option>
+              <option value="Horns">Horns</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="walking"><h2>Creature's way of walking?</h2></td>
+            <td><select name="walking">
+              <option selected value="Biped">Biped</option>
+              <option value="Quadruped">Quadruped</option>
+              <option value="Hexaped">Hexaped</option>
+              <option value="Octoped">Octoped</option>
+              <option value="Myriapoda">Myriapoda</option>
+              <option value="Limbless">Limbless</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="bodyCovering"><h2>Creature's body covering?</h2></td>
+            <td><select name="bodyCovering">
+              <option selected value="Feathers">Feathers</option>
+              <option value="Thick Fur">Thick Fur</option>
+              <option value="Thin Hair">Thin Hair</option>
+              <option value="Scales">Scales</option>
+              <option value="Mucous">Mucous</option>
+              <option value="Exoskeleton">Exoskeleton</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="wings"><h2>Does the Creature have wings?</h2></td>
+            <td><select name="wings">
+              <option selected value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><label for="flight"><h2>Can the Creature fly?</h2></td>
+            <td><select name="flight">
+              <option selected value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select></td>
+          </label>
+        </tr>
+      </table>
+      <button type="submit" class="btn">Create Creature</button>
     </form>
   <% } %> 
 </main>
