@@ -34,11 +34,13 @@ const commentSchema = new mongoose.Schema({
 const creatureSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    maxLength: 20
   },
   sciName: {
     type: String,
-    required: true
+    required: true,
+    maxLength: 20
   },
   animalClass: {
     type: String,

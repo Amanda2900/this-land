@@ -9,12 +9,12 @@
       <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
         <tr>
           <td><label for="name"><h2><%= creature.name %>'s name: </h2></td>
-            <td><input type="text" name="name" value="<%= creature.name %>" autocomplete="off"></td>
+            <td><input type="text" name="name" value="<%= creature.name %>" autocomplete="off" maxlength="20"></td>
           </label>
         </tr>
         <tr>
           <td><label for="sciName"><h2><%= creature.name %>'s sci name: </h2></td>
-            <td><input type="text" name="sciName" value="<%= creature.sciName %>" autocomplete="off"></td>
+            <td><input type="text" name="sciName" value="<%= creature.sciName %>" autocomplete="off" maxlength="20"></td>
           </label>
         </tr>
         <tr>

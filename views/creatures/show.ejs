@@ -1,257 +1,354 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/creatures/show.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/creatures/show.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+  <%- include('../partials/nav') %>
 
-<main>
-  <section> 
-    <h1><%= creature.name %>'s Info</h1>
-    <h2 class="owner">Created by <a href="/profiles/<%= creature.profile.id %> "><%= creature.profile.name %></a></h2>
-  </section>
-  <section class="stats">
-    <table>
-      <tr>
-        <td><h2>Name:</h2></td>
-        <td><p><%= creature.name %></p></td>
-        <td><h2>Sci Name:</h2></td>
-        <td><i><p><%= creature.sciName %></p></i></td>
-      </tr>
-      <% if (creature.dragon === true) { %> 
-        <tr>
-          <td><img src="/images/img/icons/dragon.png" alt="dragon"></td>
-          <td><p>Dragon</p></td>
-          <td>
-            <% if (creature.element === 'Ice') { %> 
-              <img src="/images/img/icons/snowflake.png" alt="snowflake">
-            <% } %>
-            <% if (creature.element === 'Electricity') { %> 
-              <img src="/images/img/icons/lightning.png" alt="lightning-bolt">
-            <% } %>
-            <% if (creature.element === 'Fire') { %> 
-              <img src="/images/img/icons/fire.png" alt="fire">
-            <% } %>
-            <% if (creature.element === 'Water') { %> 
-              <img src="/images/img/icons/water.png" alt="water">
-            <% } %>
-            <% if (creature.element === 'Earth') { %> 
-              <img src="/images/img/icons/rocks.png" alt="rocks">
-            <% } %>
-            <% if (creature.element === 'Psychic') { %> 
-              <img src="/images/img/icons/hand.png" alt="psychic-hand">
-            <% } %>
-          </td>
-          <td><p><%= creature.element %> Dragon</p></td>
-        </tr>
-      <% } else { %> 
-        <tr>
-          <td></td>
-          <td>
-            <% if (creature.animalClass === 'Mammal') { %> 
-              <img src="/images/img/icons/smilodon.png" alt="smilodon">
-            <% } %>
-            <% if (creature.animalClass === 'Reptile') { %> 
-              <img src="/images/img/icons/tyrannosaurus.png" alt="tyrannosaurus">
-            <% } %>
-            <% if (creature.animalClass === 'Bird') { %> 
-              <img src="/images/img/icons/hawk.png" alt="hawk">
-            <% } %>
-            <% if (creature.animalClass === 'Insect') { %> 
-              <img src="/images/img/icons/insect.png" alt="insect">
-            <% } %>
-            <% if (creature.animalClass === 'Amphibian') { %> 
-              <img src="/images/img/icons/newt.png" alt="newt">
-            <% } %>
-          </td>
-          <td><p><%= creature.animalClass %></p></td>
-          <td></td>
-      </tr>
-      <% } %>
-      <tr>
-        <td><img src="/images/img/icons/ruler.png" alt="L-shaped-ruler"></td>
-        <td><p><%= creature.size %></p></td>
-        <td>
-          <% if (creature.habitat === 'Forest') { %> 
-            <img src="/images/img/icons/tree.png" alt="fir-trees">
-          <% } %>
-          <% if (creature.habitat === 'Ocean') { %> 
-            <img src="/images/img/icons/wave.png" alt="ocean-wave">
-          <% } %>
-          <% if (creature.habitat === 'Jungle') { %> 
-            <img src="/images/img/icons/jungle.png" alt="jungle-leaf">
-          <% } %>
-          <% if (creature.habitat === 'Grasslands') { %> 
-            <img src="/images/img/icons/grass-leaves.png" alt="grass">
-          <% } %>
-          <% if (creature.habitat === 'Desert') { %> 
-            <img src="/images/img/icons/desert.png" alt="desert">
-          <% } %>
-          <% if (creature.habitat === 'Tundra') { %> 
-            <img src="/images/img/icons/mountain.png" alt="mountains">
-          <% } %>
-        </td>
-        <td><p><%= creature.habitat %> Habitat</p></td>
-      </tr>
-      <tr>
-        <td>
-          <% if (creature.food === 'Omnivore') { %> 
-            <img src="/images/img/icons/sandwich.png" alt="hamburger">
-          <% } %>
-          <% if (creature.food === 'Herbivore') { %> 
-            <img src="/images/img/icons/leaf.png" alt="leaf">
-          <% } %>
-          <% if (creature.food === 'Carnivore') { %> 
-            <img src="/images/img/icons/chicken-leg.png" alt="chicken-leg">
-          <% } %>
-        </td>
-        <td><p><%= creature.food %></p></td>
-        <td><img src="/images/img/icons/security.png" alt="shield"></td>
-        <td><p><%= creature.defense %></p></td>
-      </tr>
-      <tr>
-        <td><img src="/images/img/icons/footprint.png" alt="paw-print"></td>
-        <td><p><%= creature.walking %></p></td>
-        <td><img src="/images/img/icons/feather.png" alt="feather"></td>
-        <td><p><%= creature.bodyCovering %></p></td>
-      </tr>
-      <tr>
-        <td><img src="/images/img/icons/wings.png" alt="wings"></td>
-        <td><p><%= creature.wings === 'Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %></p></td>
-        <td><img src="/images/img/icons/superhero.png" alt="superhero-flying"></td>
-        <td><p><%= creature.flight === 'Yes' ? `${creature.name} can fly` : `${creature.name} can't fly.` %></p></td>
-      </tr>
-    </table>
-    <% if (creature.profile.equals(user?.profile._id)) { %>
-      <table class="profileBtns">
-        <tr>
-          <td>
-            <form action="/creatures/new" method="GET">
-              <button class="btn" type="submit" class="friendBtn">Give <%= creature.name %> a friend</button>
-            </form>
-          </td>
-          <td>
-            <form action="/creatures/<%= creature._id %>/edit" method="GET">
-              <button class="btn" type="submit">Edit <%= creature.name %></button>
-            </form>
-          </td>
-          <td>
-            <form action="/creatures/<%= creature._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete <%= creature.name %></button>
-            </form>
-          </td>
-        </tr>
-      </table>
-    <% } %>
-  </section>
-  <section class="comments">
-    <% if (creature.dragon) { %> 
-      <h2 class="bow">Bow down to <%= creature.name %> the dragon!</h2>
-      <h2 class="strike">Comments</h2>
-    <% } else { %> 
-      <h2 class="commentTitle">Comments</h2>
-    <% } %> 
-    <table class="commentTable">
-      <% if (profileKilled) { %> 
-        <tr>
-          <td>
-            <p class="eaten"><b>You had your chance. You're dead. <%= creature.name %> ate you.</b></p>
-          </td>
-        </tr>
-      <% } else { %> 
-        <% if (creature.dragon) { %> 
+    <main>
+      <section>
+        <h1>
+          <%= creature.name %>'s Info
+        </h1>
+        <h2 class="owner">Created by <a href="/profiles/<%= creature.profile.id %> ">
+            <%= creature.profile.name %>
+          </a></h2>
+      </section>
+      <section class="stats">
+        <table>
           <tr>
-            <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
-              <td><label for="dragonChoice" class="dragonChoiceName"><b><p><%= user.profile.name %></p></b></td>
-                  <td><select name="dragonChoice">
-                    <option selected value="wants to leave an offering.">wants to leave an offering.</option>
-                    <option value="wants to fight the dragon.">wants to fight <%= creature.name %>.</option>
-                    <option value="wants to domesticate the dragon.">wants to domesticate <%= creature.name %>.</option>
-                  </select></td>
-              </label>
+            <td>
+              <h2>Name:</h2>
+            </td>
+            <td>
+              <p>
+                <%= creature.name %>
+              </p>
+            </td>
+            <td>
+              <h2>Sci Name:</h2>
+            </td>
+            <td><i>
+                <p>
+                  <%= creature.sciName %>
+                </p>
+              </i></td>
           </tr>
-          <tr>
-            <td></td>
-            <td><button type="submit" class="btn">Approach <%= creature.name %></button></td>
-            </form>
-          </tr>
-        <% } else { %> 
-          <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+          <% if (creature.dragon===true) { %>
             <tr>
-              <td><b><p><%= user.profile.name %> thinks...</p></b></td>
-            </tr>
-            <tr>
+              <td><img src="/images/img/icons/dragon.png" alt="dragon"></td>
               <td>
-                <label for="rating">
-                  <select name="rating" class="rating">
-                    <option selected value="is the king of the dinosaurs and rules This Land!"><%= creature.name %> is the king of the dinosaurs and rules This Land!</option>
-                    <option value="will live long and prosper."><%= creature.name %> will live long and prosper.</option>
-                    <option value="is a great conversationalist, but weak DNA."><%= creature.name %> is a great conversationalist, but weak DNA.</option>
-                    <option value="smells nice and looks tasty."><%= creature.name %> smells nice and looks tasty.</option>
-                    <option value="will make it 10 feet and get stuck in a tar pit."><%= creature.name %> will make it 10 feet and get stuck in a tar pit.</option>
-                  </select>
-                </label>
+                <p>Dragon</p>
+              </td>
+              <td>
+                <% if (creature.element==='Ice' ) { %>
+                  <img src="/images/img/icons/snowflake.png" alt="snowflake">
+                  <% } %>
+                <% if (creature.element==='Electricity' ) { %>
+                  <img src="/images/img/icons/lightning.png" alt="lightning-bolt">
+                <% } %>
+                <% if (creature.element==='Fire' ) { %>
+                  <img src="/images/img/icons/fire.png" alt="fire">
+                <% } %>
+                <% if (creature.element==='Water' ) { %>
+                  <img src="/images/img/icons/water.png" alt="water">
+                <% } %>
+                <% if (creature.element==='Earth' ) { %>
+                  <img src="/images/img/icons/rocks.png" alt="rocks">
+                <% } %>
+                <% if (creature.element==='Psychic' ) { %>
+                  <img src="/images/img/icons/hand.png" alt="psychic-hand">
+                <% } %>
+              </td>
+              <td>
+                <p>
+                  <%= creature.element %> Dragon
+                </p>
               </td>
             </tr>
-            <tr>
-              <td>
-                <label for="content">
-                  <select name="content" class="content">
-                    <option value="will own the world!">They will own the world!</option>
-                    <option value="will still be strong and ferocious, but half the size with a silly name."> They will still be strong and ferocious, but half the size with a silly name.</option>
-                    <option value="will evolve to be cute and domesticated.">They will evolve to be cute and domesticated.</option>
-                    <option value="will get to the ice age and freeze in a glacier.">They will get to the ice age and freeze in a glacier.</option>
-                    <option value="will never survive the meteor.">They will never survive the meteor.</option>
-                  </select>
-                </label>
-              </td>
-            </tr>
-            <tr>
-              <td><button type="submit" class="btn commentBtn">Leave comment</button></td>
-            </tr>
-          </form>
-        <% } %>
-      <% } %> 
-      <% if (creature.comments.length) { %>
-        <% if (creature.dragon) { %> 
-          <tr>
-            <% creature.comments.forEach(function(comment) { %>
-              <% if (comment.dragonChoice === "wants to leave an offering.") { %> 
-                <p><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> left <%= creature.name %> an offering.</p>
-                <br>
-              <% } %> 
-              <% if (comment.dragonChoice === "wants to fight the dragon.") { %>
-                <p><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> is dead becuase they tried to fight <%= creature.name %>.</p>
-                <br>
-              <% } %> 
-              <% if (comment.dragonChoice === "wants to domesticate the dragon.") { %>
-                <p><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> is dead because they tried to domesticate <%= creature.name %>.</p>
-                <br>
+            <% } else { %>
+              <tr>
+                <td></td>
+                <td>
+                  <% if (creature.animalClass==='Mammal' ) { %>
+                    <img src="/images/img/icons/smilodon.png" alt="smilodon">
+                    <% } %>
+                  <% if (creature.animalClass==='Reptile' ) { %>
+                    <img src="/images/img/icons/tyrannosaurus.png" alt="tyrannosaurus">
+                  <% } %>
+                  <% if (creature.animalClass==='Bird' ) { %>
+                    <img src="/images/img/icons/hawk.png" alt="hawk">
+                  <% } %>
+                  <% if (creature.animalClass==='Insect' ) { %>
+                    <img src="/images/img/icons/insect.png" alt="insect">
+                  <% } %>
+                  <% if (creature.animalClass==='Amphibian' ) { %>
+                    <img src="/images/img/icons/newt.png" alt="newt">
+                  <% } %>
+                </td>
+                <td>
+                  <p>
+                    <%= creature.animalClass %>
+                  </p>
+                </td>
+                <td></td>
+              </tr>
               <% } %>
-            <% }) %> 
-          </tr>
-        <% } else { %> 
-          <tr>
-            <% creature.comments.forEach(function(comment) { %>
-              <p><a href="/profiles/<%= comment.profile.id %> "><%= comment.author %></a> thinks <%= creature.name %> <%= comment.rating %></p> 
-          </tr>
-          <tr>
-              <p>They <%= comment.content %></p>
-              <br>
-            <% }) %> 
-          </tr>
-        <% } %> 
-      <% } else { %>
-        <% if (creature.dragon) { %> 
-          <tr>
-            <p>No loyal subjects yet.</p>
-            <br>
-          </tr>
-        <% } else { %> 
-          <tr>
-            <p>No comments yet.</p>
-          </tr>
-        <% } %> 
-      <% } %>
-    </table>
-  </section>
-</main>
+                <tr>
+                  <td><img src="/images/img/icons/ruler.png" alt="L-shaped-ruler"></td>
+                  <td>
+                    <p>
+                      <%= creature.size %>
+                    </p>
+                  </td>
+                  <td>
+                    <% if (creature.habitat==='Forest' ) { %>
+                      <img src="/images/img/icons/tree.png" alt="fir-trees">
+                    <% } %>
+                    <% if (creature.habitat==='Ocean' ) { %>
+                      <img src="/images/img/icons/wave.png" alt="ocean-wave">
+                    <% } %>
+                    <% if (creature.habitat==='Jungle' ) { %>
+                      <img src="/images/img/icons/jungle.png" alt="jungle-leaf">
+                    <% } %>
+                    <% if (creature.habitat==='Grasslands' ) { %>
+                      <img src="/images/img/icons/grass-leaves.png" alt="grass">
+                    <% } %>
+                    <% if (creature.habitat==='Desert' ) { %>
+                      <img src="/images/img/icons/desert.png" alt="desert">
+                    <% } %>
+                    <% if (creature.habitat==='Tundra' ) { %>
+                      <img src="/images/img/icons/mountain.png" alt="mountains">
+                    <% } %>
+                  </td>
+                  <td>
+                    <p>
+                      <%= creature.habitat %> Habitat
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <% if (creature.food==='Omnivore' ) { %>
+                      <img src="/images/img/icons/sandwich.png" alt="hamburger">
+                    <% } %>
+                    <% if (creature.food==='Herbivore' ) { %>
+                      <img src="/images/img/icons/leaf.png" alt="leaf">
+                    <% } %>
+                    <% if (creature.food==='Carnivore' ) { %>
+                      <img src="/images/img/icons/chicken-leg.png" alt="chicken-leg">
+                    <% } %>
+                  </td>
+                  <td>
+                    <p>
+                      <%= creature.food %>
+                    </p>
+                  </td>
+                  <td><img src="/images/img/icons/security.png" alt="shield"></td>
+                  <td>
+                    <p>
+                      <%= creature.defense %>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="/images/img/icons/footprint.png" alt="paw-print"></td>
+                  <td>
+                    <p>
+                      <%= creature.walking %>
+                    </p>
+                  </td>
+                  <td><img src="/images/img/icons/feather.png" alt="feather"></td>
+                  <td>
+                    <p>
+                      <%= creature.bodyCovering %>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="/images/img/icons/wings.png" alt="wings"></td>
+                  <td>
+                    <p>
+                      <%= creature.wings==='Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %>
+                    </p>
+                  </td>
+                  <td><img src="/images/img/icons/superhero.png" alt="superhero-flying"></td>
+                  <td>
+                    <p>
+                      <%= creature.flight==='Yes' ? `${creature.name} can fly` : `${creature.name} can't fly.` %>
+                    </p>
+                  </td>
+                </tr>
+        </table>
+        <% if (creature.profile.equals(user?.profile._id)) { %>
+          <table class="profileBtns">
+            <tr>
+              <td>
+                <form action="/creatures/new" method="GET">
+                  <button class="btn" type="submit" class="friendBtn">Give <%= creature.name %> a friend</button>
+                </form>
+              </td>
+              <td>
+                <form action="/creatures/<%= creature._id %>/edit" method="GET">
+                  <button class="btn" type="submit">Edit <%= creature.name %></button>
+                </form>
+              </td>
+              <td>
+                <form action="/creatures/<%= creature._id %>?_method=DELETE" method="POST">
+                  <button class="btn" type="submit">Delete <%= creature.name %></button>
+                </form>
+              </td>
+            </tr>
+          </table>
+          <% } %>
+      </section>
+      <section class="comments">
+        <% if (creature.dragon) { %>
+          <h2 class="bow">Bow down to <%= creature.name %> the dragon!</h2>
+          <h2 class="strike">Comments</h2>
+          <% } else { %>
+            <h2 class="commentTitle">Comments</h2>
+            <% } %>
+              <table class="commentTable">
+                <% if (profileKilled) { %>
+                  <tr>
+                    <td>
+                      <p class="eaten"><b>You had your chance. You're dead. <%= creature.name %> ate you.</b></p>
+                    </td>
+                  </tr>
+                  <% } else { %>
+                    <% if (creature.dragon) { %>
+                      <tr>
+                        <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+                          <td><label for="dragonChoice" class="dragonChoiceName"><b>
+                                <p>
+                                  <%= user.profile.name %>
+                                </p>
+                              </b></td>
+                          <td><select name="dragonChoice">
+                              <option selected value="wants to leave an offering.">wants to leave an offering.</option>
+                              <option value="wants to fight the dragon.">wants to fight <%= creature.name %>.</option>
+                              <option value="wants to domesticate the dragon.">wants to domesticate <%= creature.name %>
+                                  .</option>
+                            </select></td>
+                          </label>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><button type="submit" class="btn">Approach <%= creature.name %></button></td>
+                        </form>
+                      </tr>
+                      <% } else { %>
+                        <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
+                          <tr>
+                            <td><b>
+                                <p>
+                                  <%= user.profile.name %> thinks...
+                                </p>
+                              </b></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <label for="rating">
+                                <select name="rating" class="rating">
+                                  <option selected value="is the king of the dinosaurs and rules This Land!">
+                                    <%= creature.name %> is the king of the dinosaurs and rules This Land!
+                                  </option>
+                                  <option value="will live long and prosper.">
+                                    <%= creature.name %> will live long and prosper.
+                                  </option>
+                                  <option value="is a great conversationalist, but weak DNA.">
+                                    <%= creature.name %> is a great conversationalist, but weak DNA.
+                                  </option>
+                                  <option value="smells nice and looks tasty.">
+                                    <%= creature.name %> smells nice and looks tasty.
+                                  </option>
+                                  <option value="will make it 10 feet and get stuck in a tar pit.">
+                                    <%= creature.name %> will make it 10 feet and get stuck in a tar pit.
+                                  </option>
+                                </select>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <label for="content">
+                                <select name="content" class="content">
+                                  <option value="will own the world!">They will own the world!</option>
+                                  <option
+                                    value="will still be strong and ferocious, but half the size with a silly name.">
+                                    They will still be strong and ferocious, but half the size with a silly name.
+                                  </option>
+                                  <option value="will evolve to be cute and domesticated.">They will evolve to be cute
+                                    and domesticated.</option>
+                                  <option value="will get to the ice age and freeze in a glacier.">They will get to the
+                                    ice age and freeze in a glacier.</option>
+                                  <option value="will never survive the meteor.">They will never survive the meteor.
+                                  </option>
+                                </select>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><button type="submit" class="btn commentBtn">Leave comment</button></td>
+                          </tr>
+                        </form>
+                        <% } %>
+                          <% } %>
+                            <% if (creature.comments.length) { %>
+                              <% if (creature.dragon) { %>
+                                <tr>
+                                  <% creature.comments.forEach(function(comment) { %>
+                                    <% if (comment.dragonChoice==="wants to leave an offering." ) { %>
+                                      <p><a href="/profiles/<%= comment.profile.id %> ">
+                                          <%= comment.author %>
+                                        </a> left <%= creature.name %> an offering.</p>
+                                      <br>
+                                      <% } %>
+                                        <% if (comment.dragonChoice==="wants to fight the dragon." ) { %>
+                                          <p><a href="/profiles/<%= comment.profile.id %> ">
+                                              <%= comment.author %>
+                                            </a> is dead becuase they tried to fight <%= creature.name %>.</p>
+                                          <br>
+                                          <% } %>
+                                            <% if (comment.dragonChoice==="wants to domesticate the dragon." ) { %>
+                                              <p><a href="/profiles/<%= comment.profile.id %> ">
+                                                  <%= comment.author %>
+                                                </a> is dead because they tried to domesticate <%= creature.name %>.</p>
+                                              <br>
+                                              <% } %>
+                                                <% }) %>
+                                </tr>
+                                <% } else { %>
+                                  <tr>
+                                    <% creature.comments.forEach(function(comment) { %>
+                                      <p><a href="/profiles/<%= comment.profile.id %> ">
+                                          <%= comment.author %>
+                                        </a> thinks <%= creature.name %>
+                                          <%= comment.rating %>
+                                      </p>
+                                  </tr>
+                                  <tr>
+                                    <p>They <%= comment.content %>
+                                    </p>
+                                    <br>
+                                    <% }) %>
+                                  </tr>
+                                  <% } %>
+                                    <% } else { %>
+                                      <% if (creature.dragon) { %>
+                                        <tr>
+                                          <p>No loyal subjects yet.</p>
+                                          <br>
+                                        </tr>
+                                        <% } else { %>
+                                          <tr>
+                                            <p>No comments yet.</p>
+                                          </tr>
+                                          <% } %>
+                                            <% } %>
+              </table>
+      </section>
+    </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

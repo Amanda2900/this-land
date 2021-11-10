@@ -63,6 +63,7 @@ a:hover {
   margin-left: 50px;
   margin-top: -5px;
   font-size: 35px;
+  font-family: 'Nothing You Could Do', cursive;
 }
 
 .strike {
@@ -74,6 +75,7 @@ a:hover {
   margin-left: 10px;
   color: rgb(103, 3, 3);
   font-size: 25px;
+  font-family: 'Nothing You Could Do', cursive;
 }
 
 .rating {
