@@ -10,9 +10,9 @@ Click <a href="https://trello.com/b/5WI2orWT/this-land">here</a> to view my ERD 
 
 <h2>Screenshots</h2>
 
-<img src="../images/img/screenshot1.png" alt="homepage screenshot"/>
-<img src="../images/img/screenshot2.png" alt="build creature screenshot"/>
-<img src="../images/img/screenshot3.png" alt="show creature screenshot"/>
+<img src="public/images/img/screenshot1.png" alt="homepage screenshot"/>
+<img src="public/images/img/screenshot2.png" alt="build creature screenshot"/>
+<img src="public/images/img/screenshot3.png" alt="show creature screenshot"/>
 
 <h2>Technologies</h2>
 <ul>
