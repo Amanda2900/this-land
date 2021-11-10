@@ -1,21 +1,29 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/creatures/new.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <h1>You have created a Dragon!</h1>
-  <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
-    <label for="element">What element does your dragon control?
-      <select name="element">
-        <option selected value="Ice">Ice</option>
-        <option value="Electricity">Electricity</option>
-        <option value="Fire">Fire</option>
-        <option value="Water">Water</option>
-        <option value="Earth">Earth</option>
-        <option value="Psychic">Psychic</option>
-      </select>
-    </label>
-    <button type="submit">Complete your dragon!</button>
-  </form>
+  <img src="/images/img/icons/baby-dragon.png" alt="baby dragon">
+    <form action="/creatures/<%= creature.id %>?_method=PUT" method="POST">
+      <table>
+        <tr>
+          <td><label for="element"><h2>What element does your dragon control?</h2></td>
+            <td><select name="element">
+              <option selected value="Ice">Ice</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Earth">Earth</option>
+              <option value="Psychic">Psychic</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
+          <td><button type="submit" class="btn dragonBtn">Complete your dragon!</button></td>
+        </tr>
+      </table>
+    </form>
 </main>
 
 <%- include('../partials/footer') %>

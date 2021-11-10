@@ -114,9 +114,9 @@
       </tr>
       <tr>
         <td><img src="/images/img/icons/wings.png" alt="wings"></td>
-        <td><p><%= creature.wings ? `${creature.name} has wings` : `${creature.name} does not have wings.` %></p></td>
+        <td><p><%= creature.wings === 'Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %></p></td>
         <td><img src="/images/img/icons/superhero.png" alt="superhero-flying"></td>
-        <td><p><%= creature.flight ? `${creature.name} can fly` : `${creature.name} cannot fly.` %></p></td>
+        <td><p><%= creature.flight === 'Yes' ? `${creature.name} can fly` : `${creature.name} can't fly.` %></p></td>
       </tr>
     </table>
     <% if (creature.profile.equals(user?.profile._id)) { %>
@@ -124,7 +124,7 @@
         <tr>
           <td>
             <form action="/creatures/new" method="GET">
-              <button class="btn" type="submit">Give <%= creature.name %> a friend</button>
+              <button class="btn" type="submit" class="friendBtn">Give <%= creature.name %> a friend</button>
             </form>
           </td>
           <td>
@@ -159,16 +159,17 @@
         <% if (creature.dragon) { %> 
           <tr>
             <form id="add-comment-form" action="/creatures/<%= creature._id %>/comments" method="POST">
-              <td>
-                <label for="dragonChoice"><p><%= user.profile.name %></p>
-                  <select name="dragonChoice">
+              <td><label for="dragonChoice" class="dragonChoiceName"><b><p><%= user.profile.name %></p></b></td>
+                  <td><select name="dragonChoice">
                     <option selected value="wants to leave an offering.">wants to leave an offering.</option>
                     <option value="wants to fight the dragon.">wants to fight <%= creature.name %>.</option>
                     <option value="wants to domesticate the dragon.">wants to domesticate <%= creature.name %>.</option>
-                  </select>
-                </label>
-              </td>
-              <td><button type="submit" class="btn">Approach <%= creature.name %></button></td>
+                  </select></td>
+              </label>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button type="submit" class="btn">Approach <%= creature.name %></button></td>
             </form>
           </tr>
         <% } else { %> 
@@ -238,9 +239,16 @@
           </tr>
         <% } %> 
       <% } else { %>
-        <tr>
-          <p>No comments yet.</p>
-        </tr>
+        <% if (creature.dragon) { %> 
+          <tr>
+            <p>No loyal subjects yet.</p>
+            <br>
+          </tr>
+        <% } else { %> 
+          <tr>
+            <p>No comments yet.</p>
+          </tr>
+        <% } %> 
       <% } %>
     </table>
   </section>

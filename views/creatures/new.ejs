@@ -40,6 +40,17 @@
           </label>
         </tr>
         <tr>
+          <td><label for="habitat"><h2>Creature's habitat? </h2></td>
+            <td><select name="habitat">
+              <option selected value="Forest">Forest</option>
+              <option value="Ocean">Ocean</option>
+              <option value="Jungle">Jungle</option>
+              <option value="Grasslands">Grasslands</option>
+              <option value="Tundra">Tundra</option>
+            </select></td>
+          </label>
+        </tr>
+        <tr>
           <td><label for="food"><h2>Creature's type?</h2></td>
             <td><select name="food">
               <option selected value="Omnivore">Omnivore</option>
@@ -100,8 +111,10 @@
             </select></td>
           </label>
         </tr>
-      </table>
-      <button type="submit" class="btn">Create Creature</button>
+        <tr>
+          <td><button type="submit" class="btn">Create Creature</button></td>
+        </tr>
+    </table>
     </form>
   <% } %> 
 </main>
