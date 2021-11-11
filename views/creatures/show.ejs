@@ -123,7 +123,7 @@
                   </td>
                   <td>
                     <p>
-                      <%= creature.habitat %> Habitat
+                      <%= creature.habitat %>
                     </p>
                   </td>
                 </tr>
@@ -214,20 +214,20 @@
                   </td>
                   <td>
                     <p>
-                      <%= creature.wings==='Yes' ? `${creature.name} has wings` : `${creature.name} has no wings.` %>
+                      <%= creature.wings==="Yes" ? "Has wings" : "No wings" %>
                     </p>
                   </td>
                   <td>
-                    <% if (creature.flight === 'No' ) { %>
+                    <% if (creature.flight === "No" ) { %>
                       <img src="/images/img/icons/fly.png" alt="no symbol over a fly">
                     <% } %>
-                    <% if (creature.flight === 'Yes' ) { %>
+                    <% if (creature.flight === "Yes" ) { %>
                       <img src="/images/img/icons/superhero.png" alt="superhero flying">
                     <% } %>
                   </td>
                   <td>
                     <p>
-                      <%= creature.flight==='Yes' ? `${creature.name} can fly` : `${creature.name} can't fly.` %>
+                      <%= creature.flight==="Yes" ? "Can fly" : "Can't fly" %>
                     </p>
                   </td>
                 </tr>
@@ -237,7 +237,7 @@
             <tr>
               <td>
                 <form action="/creatures/new" method="GET">
-                  <button class="btn" type="submit" class="friendBtn">Give <%= creature.name %> a friend</button>
+                  <button class="btn" type="submit" class="friendBtn">New creature</button>
                 </form>
               </td>
               <td>
@@ -254,7 +254,7 @@
           </table>
           <% } %>
       </section>
-      <section class="comments">
+      <container class="comments">
         <% if (creature.dragon) { %>
           <h2 class="bow">Bow down to <%= creature.name %> the dragon!</h2>
           <h2 class="strike">Comments</h2>
@@ -303,8 +303,8 @@
                             <td>
                               <label for="rating">
                                 <select name="rating" class="rating">
-                                  <option selected value="is the king of the dinosaurs and rules This Land!">
-                                    <%= creature.name %> is the king of the dinosaurs and rules This Land!
+                                  <option selected value="is the king and rules This Land!">
+                                    <%= creature.name %> is the king and rules This Land!
                                   </option>
                                   <option value="will live long and prosper.">
                                     <%= creature.name %> will live long and prosper.
@@ -315,8 +315,8 @@
                                   <option value="smells nice and looks tasty.">
                                     <%= creature.name %> smells nice and looks tasty.
                                   </option>
-                                  <option value="will make it 10 feet and get stuck in a tar pit.">
-                                    <%= creature.name %> will make it 10 feet and get stuck in a tar pit.
+                                  <option value="will quickly get stuck in a tar pit.">
+                                    <%= creature.name %> will quickly get stuck in a tar pit.
                                   </option>
                                 </select>
                               </label>
@@ -326,16 +326,14 @@
                             <td>
                               <label for="content">
                                 <select name="content" class="content">
-                                  <option value="will own the world!">They will own the world!</option>
+                                  <option value="will own the world!">Their species will own the world!</option>
                                   <option
-                                    value="will still be strong and ferocious, but half the size with a silly name.">
-                                    They will still be strong and ferocious, but half the size with a silly name.
+                                    value="will still be intimidating, but be given a silly name.">
+                                    Their species will still be intimidating, but be given a silly name..
                                   </option>
-                                  <option value="will evolve to be cute and domesticated.">They will evolve to be cute
-                                    and domesticated.</option>
-                                  <option value="will get to the ice age and freeze in a glacier.">They will get to the
-                                    ice age and freeze in a glacier.</option>
-                                  <option value="will never survive the meteor.">They will never survive the meteor.
+                                  <option value="will be cute and domesticated.">Their species will be cute and domesticated.</option>
+                                  <option value="will freeze in a glacier during the ice age.">Their species will freeze in a glacier during the ice age.</option>
+                                  <option value="will never survive the meteor.">Their species will never survive the meteor.
                                   </option>
                                 </select>
                               </label>
@@ -357,19 +355,19 @@
                                         </a> left <%= creature.name %> an offering.</p>
                                       <br>
                                       <% } %>
-                                        <% if (comment.dragonChoice==="wants to fight the dragon." ) { %>
-                                          <p><a href="/profiles/<%= comment.profile.id %> ">
-                                              <%= comment.author %>
-                                            </a> is dead because they tried to fight <%= creature.name %>.</p>
-                                          <br>
-                                          <% } %>
-                                            <% if (comment.dragonChoice==="wants to domesticate the dragon." ) { %>
-                                              <p><a href="/profiles/<%= comment.profile.id %> ">
-                                                  <%= comment.author %>
-                                                </a> is dead because they tried to domesticate <%= creature.name %>.</p>
-                                              <br>
-                                              <% } %>
-                                                <% }) %>
+                                    <% if (comment.dragonChoice==="wants to fight the dragon." ) { %>
+                                      <p><a href="/profiles/<%= comment.profile.id %> ">
+                                          <%= comment.author %>
+                                        </a> is dead because they tried to fight <%= creature.name %>.</p>
+                                      <br>
+                                    <% } %>
+                                    <% if (comment.dragonChoice==="wants to domesticate the dragon." ) { %>
+                                      <p><a href="/profiles/<%= comment.profile.id %> ">
+                                        <%= comment.author %>
+                                        </a> is dead because they tried to domesticate <%= creature.name %>.</p>
+                                      <br>
+                                    <% } %>
+                                  <% }) %>
                                 </tr>
                                 <% } else { %>
                                   <tr>
@@ -387,20 +385,20 @@
                                     <% }) %>
                                   </tr>
                                   <% } %>
-                                    <% } else { %>
-                                      <% if (creature.dragon) { %>
-                                        <tr>
-                                          <p>No loyal subjects yet.</p>
-                                          <br>
-                                        </tr>
-                                        <% } else { %>
-                                          <tr>
-                                            <p>No comments yet.</p>
-                                          </tr>
-                                          <% } %>
-                                            <% } %>
+                            <% } else { %>
+                              <% if (creature.dragon) { %>
+                                <tr>
+                                  <p>No loyal subjects yet.</p>
+                                  <br>
+                                </tr>
+                              <% } else { %>
+                                <tr>
+                                  <p>No comments yet.</p>
+                                </tr>
+                              <% } %>
+                            <% } %>
               </table>
-      </section>
+            </container>
     </main>
 
-    <%- include('../partials/footer') %>
+    <%- include("../partials/footer") %>

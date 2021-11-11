@@ -7,18 +7,18 @@ const commentSchema = new mongoose.Schema({
   author: String,
   rating: {
     type: String,
-    enum: ['is the king of the dinosaurs and rules This Land!', 
+    enum: ['is the king and rules This Land!', 
       'will live long and prosper.', 
       'is a great conversationalist, but weak DNA.',
       'smells nice and looks tasty.', 
-      'will make it 10 feet and get stuck in a tar pit.']
+      'will quickly get stuck in a tar pit.']
     },
   content: {
     type: String,
     enum: ['will own the world!', 
-      'will still be strong and ferocious, but half the size with a silly name.', 
-      'will evolve to be cute and domesticated.',
-      'will get to the ice age and freeze in a glacier.', 
+      'will still be intimidating, but be given a silly name.', 
+      'will be cute and domesticated.',
+      'will freeze in a glacier during the ice age.', 
       'will never survive the meteor.']
     },
   dragonChoice: {

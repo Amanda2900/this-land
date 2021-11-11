@@ -1,6 +1,6 @@
 
 img {
-  height: 75px;
+  height: 100px;
   margin: 10px;
 }
 
@@ -40,7 +40,7 @@ a:hover {
   border-radius: 5%;
   margin: 10px 0;
   border: 2px solid #46072f;
-  background-color: rgba(222, 196, 247, 0.8)
+  background-color: rgba(222, 196, 247, 0.8);
 }
 
 .comments {
@@ -51,11 +51,11 @@ a:hover {
   border-radius: 5%;
   margin: 10px 0 30px 0;
   border: 2px solid #46072f;
-  background-color: rgba(222, 196, 247, 0.8)
+  background-color: rgba(222, 196, 247, 0.8);
 }
 
 .commentTitle {
-  margin-left: 260px;
+  margin-left: 240px;
   font-size: 25px;
 }
 
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .commentBtn {
-  margin-left: 250px;
+  margin-left: 230px;
 }
 
 .dragonChoiceName {

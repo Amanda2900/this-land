@@ -38,5 +38,5 @@ Click <a href="https://trello.com/b/5WI2orWT/this-land">here</a> to view my ERD 
   <li><b>Font:</b> Google Fonts https://fonts.google.com/</li>  
   <li><b>Cards:</b> Bootstrap https://getbootstrap.com/docs/4.0/components/card/</li>
   <li><b>Background Image:</b>Background vector created by upklyak https://www.freepik.com/vectors/background</li>
-  <li><b>Icons and Favicon:</b> Flaticons by users: Smashicons, Icongeek26, Surang, and Freepik https://www.flaticon.com/</li>
+  <li><b>Icons and Favicon:</b> Flaticon by users Smashicons, Icongeek26, Surang, and Freepik https://www.flaticon.com/</li>
 </ul>

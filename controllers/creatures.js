@@ -1,6 +1,5 @@
 import { Creature } from '../models/creature.js'
 import { isLoggedIn } from '../middleware/middleware.js'
-import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Creature.find({})
@@ -26,7 +25,10 @@ function create(req, res) {
   req.body.profile = req.user.profile._id
   Creature.create(req.body)
   .then(creature => {
-    if (creature.animalClass === 'Reptile' && creature.size === 'Extra Large' && creature.food === 'Carnivore' && creature.defense === 'Claws' && creature.walking === 'Quadruped' && creature.bodyCovering === 'Scales' && creature.wings === 'Yes' && creature.flight === 'Yes') {
+    if (creature.animalClass === 'Reptile' && creature.size === 'Extra Large' 
+      && creature.food === 'Carnivore' && creature.defense === 'Claws' 
+      && creature.walking === 'Quadruped' && creature.bodyCovering === 'Scales' 
+      && creature.wings === 'Yes' && creature.flight === 'Yes') {
       creature.dragon = true
       creature.save()
     }
@@ -122,8 +124,9 @@ function createComment(req, res) {
   Creature.findById(req.params.id)
   .then(creature => {
     creature.comments.push(req.body)
-    if (req.body.dragonChoice === 'wants to fight the dragon.' || req.body.dragonChoice === 'wants to domesticate the dragon.') {
-      creature.kills.push(req.user.profile._id)
+    if (req.body.dragonChoice === 'wants to fight the dragon.' 
+      || req.body.dragonChoice === 'wants to domesticate the dragon.') {
+        creature.kills.push(req.user.profile._id)
     }
     creature.save()
 
