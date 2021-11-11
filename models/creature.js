@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
     type: String,
     enum: ['is the king and rules This Land!', 
       'will live long and prosper.', 
-      'is a great conversationalist, but weak DNA.',
+      'is a great conversationalist, but has weak DNA.',
       'smells nice and looks tasty.', 
       'will quickly get stuck in a tar pit.']
     },
@@ -35,7 +35,7 @@ const creatureSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    maxLength: 20
+    maxLength: 12
   },
   sciName: {
     type: String,

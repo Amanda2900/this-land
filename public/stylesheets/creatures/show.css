@@ -6,15 +6,20 @@ img {
 
 h1 {
   display: inline;
-  margin-left: 25px;
+  text-align: center;
 }
 
 h2 {
   font-size: 25px;
+  text-align: center;
 }
 
 p{
   font-size: 20px;
+}
+
+td {
+  align-items: center;
 }
 
 select {
@@ -55,7 +60,7 @@ a:hover {
 }
 
 .commentTitle {
-  margin-left: 240px;
+  text-align: center;
   font-size: 25px;
 }
 
@@ -68,7 +73,6 @@ a:hover {
 
 .strike {
   text-decoration: line-through;
-  margin-left: 220px;
 }
 
 .eaten {
