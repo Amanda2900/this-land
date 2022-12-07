@@ -2,7 +2,7 @@
 As a kid, I loved dinosaurs. I came into class on career day when I was seven dressed as an archeologist. As I've grown older, this love has not faded. I also really enjoy games where you can customize characters. I thought I would incorporate both of these interests in a application where you can build your own prehistoric creatures. Welcome to This Land! Create your own creatures, check out creatures made by other users, and rate them and their ability to survive and evolve!
 
 <h2>To Play</h2>
-The game is deployed <a href="https://this-land.herokuapp.com/">here</a>.
+The game is deployed <a href="https://this-land.fly.dev/">here</a>.
 
 Just log in with a google account to get started. Then click on the 'Creatures' tab to views creatures other users have made. Click on 'Create a Creature' to make some of your own. When viewing other creatures, leave reviews to let others know what you think of their creations! Bonus: see if you can find the dragon egg!
 
